@@ -1,0 +1,30 @@
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-container {
+    margin: auto;
+    width: 500px;
+}
+
+.name {
+    color: #64ffda;
+    font-size: 23px;
+}
+
+.company {
+    color: #64ffda;
+}
+
+.company-link {
+    color: inherit;
+}
+
+.header {
+    font-size: 20px;
+    font-weight: 400;
+}
+

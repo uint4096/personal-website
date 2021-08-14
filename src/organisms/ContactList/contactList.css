@@ -1,0 +1,27 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2px;
+}
+
+.line {
+    background-color: #b4b4b4;
+    width: 2px;
+    margin: auto;
+    height: 60px; 
+}
+
+.icon {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.list {
+    position: absolute;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    bottom: 0;
+}
