@@ -6,8 +6,40 @@
 }
 
 .primary-container {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+    gap: 80px;
     margin: auto;
-    width: 500px;
+    align-items: flex-start;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    align-content: center;
+    color: rgb(233, 233, 233);
+    font-size: x-large;
+    opacity: 0.8;
+}
+
+.topic:first-child:hover {
+    color: #64ffda
+}
+
+.hr {
+    background-color: #b4b4b4;
+    width: 50%;
+    height: 1px;
+    opacity: 0.5;
+}
+
+.portfolio-content {
+    width: 600px;
+    align-self: center;
 }
 
 .name {

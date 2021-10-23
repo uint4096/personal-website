@@ -3,7 +3,8 @@ import './contactList.css';
 import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+import { animated } from 'react-spring';
+import { useFadeIn } from '../../Hooks/useAnimation';
 interface ContactProps {
     icon?: IconDefinition;
     link?: string;
@@ -15,8 +16,6 @@ function Contact({ icon, link }: ContactProps) {
 
     return (
         <div className={'contact'}>
-            <div className={'line'}>
-            </div>
             {icon && link &&
             <div
                 className={'icon'}
@@ -36,11 +35,15 @@ function Contact({ icon, link }: ContactProps) {
 
 export function ContactList() {
     return (
-        <div className={'list'}>
+        <animated.div style={useFadeIn({ delay: 2000 })} className={'list'}>
             <Contact icon={faGithub} link={'https://github.com/uint4096'}/>
+            <div className={'line'}>
+            </div>
             <Contact icon={faLinkedin} link={'https://linkedin.com/in/abhishek-kr7'}/>
+            <div className={'line'}>
+            </div>
             <Contact icon={faEnvelope} link={'https://mail.google.com/mail/?view=cm&fs=1&to=abhishek.kumar251095@gmail.com'}/>
             <Contact />
-        </div>
+        </animated.div>
     )
 }
