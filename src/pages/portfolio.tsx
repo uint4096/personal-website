@@ -46,15 +46,15 @@ export default function Portfolio() {
             text: 'Experience',
             onClick: () => setTopic('Work Experience')
         },
-        {
-            text: 'Skills',
-            onClick: () => {}
+        // {
+        //     text: 'Skills',
+        //     onClick: () => {}
 
-        },
-        {
-            text: 'Projects',
-            onClick: () => {}
-        },
+        // },
+        // {
+        //     text: 'Projects',
+        //     onClick: () => {}
+        // },
     ];
 
     const workExp = [
