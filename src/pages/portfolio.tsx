@@ -6,37 +6,67 @@ import { animated } from 'react-spring';
 import './portfolio.css';
 import { useFadeIn } from '../Hooks/useAnimation';
 import { WorkExp } from '../organisms/Timeline/timeline';
-import { Headers, HEADERS } from '../constants';
+
+type Headers = 'About Me' | 'Experience' | 'Projects' | 'Resume';
 
 export default function Portfolio() {
+    const HEADERS: Array<Headers> = [
+        'About Me',
+        'Experience',
+        'Projects',
+        'Resume'
+    ];
 
+    const PRE_NAME: Array<JSX.Element> = [
+        <span>Hi.</span>,
+        <span>My name is <span className='name'>Abhishek Kumar</span>.</span>
+    ];
+    
+    const POST_NAME: Array<JSX.Element> = [
+        <span>I am a full stack developer with slightly more preference towards backend technologies.</span>,
+        <span>In other words, I am passionate about building web applications that scale!</span>,
+        <span>
+            I primarily work with
+            <span className={'language'}> Node.js</span> and
+            <span className={'language'}> TypeScript</span>.
+            Here are a few technologies that I specialize in:
+        </span>,
+        <div className={'languages-container'}>
+            <div>
+                <ul>
+                    <li> NestJS </li>
+                    <li> MySQL </li>
+                    <li> React </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li> Express </li>
+                    <li> MongoDB </li>
+                    <li> Rust </li>
+                </ul>
+            </div>
+        </div>
+    ];
+    
     const [ topic, setTopic ] = useState<Headers>('About Me');
 
-    const header = <animated.span style={useFadeIn({ delay: 0 })}>
-        Hi.
-    </animated.span>;
+    const preNameSet = PRE_NAME.map(
+        (elem, i) => (
+            <animated.span style={useFadeIn({ delay: (i+1)*1000 })}>
+                {elem}
+            </animated.span>
+        )
+    );
 
-    const content = [
-        <animated.span style={useFadeIn({ delay: 500 })}>
-            I work at <span className={'company'}>
-                <a className={'company-link'}href='https://www.klenty.com'>
-                    Klenty
-                </a>
-            </span>.
-        </animated.span>,
-        <animated.span style={useFadeIn({ delay: 800 })}>
-            I'm a full-stack developer with over 3 years of experience.
-        </animated.span>,
-        <animated.span style={useFadeIn({ delay: 1100 })}>
-            I'm passionate about building web-apps that scale.
-        </animated.span>,
-        <animated.span style={useFadeIn({ delay: 1400 })}>
-            I specialize in MERN stack.
-        </animated.span>,
-        <animated.span style={useFadeIn({ delay: 1700 })}>
-            I'm also a DevOps enthusiast.
-        </animated.span>,
-    ];
+    const postNameSet = POST_NAME.map(
+        (elem, i) => (
+            <animated.span style={useFadeIn({ delay: 2000 + ((i+1)*(500)) })}>
+                {elem}
+            </animated.span>
+        )
+    );
+
 
     // const workExp = [
     //     {
@@ -79,9 +109,12 @@ export default function Portfolio() {
                     <span>{topic}</span>
                     <div className='hr'></div>
                 </div> 
-                <div className='primary-container'>
-                    <Intro header={header} content={content}></Intro>
-                </div>    
+                {
+                    topic === 'About Me' &&
+                    <div className='primary-container'>
+                        <Intro preName={preNameSet} postName={postNameSet}></Intro>
+                    </div>
+                }    
             </div>
             <div className='navbar'>
                <Navbar headerDetails={headerGroup}/> 

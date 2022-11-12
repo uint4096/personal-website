@@ -14,8 +14,8 @@
 .primary-container {
     display: flex;
     flex-direction: column;
-    margin-left: 20%;
-    margin-top: 5rem; 
+    margin-left: 22%;
+    margin-top: 8rem; 
     align-items: flex-start;
 }
 
@@ -38,4 +38,22 @@
 .navbar {
     width: 15%;
     margin-top: 8rem;
+}
+
+.name {
+    font-size: 4rem;
+    color: #EEBBC3;
+}
+
+.language {
+    color: #EEBBC3;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.languages-container {
+    display: flex;
+    gap: 6rem
 }

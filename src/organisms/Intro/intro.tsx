@@ -4,15 +4,17 @@ import { useFadeIn } from "../../Hooks/useAnimation";
 import './intro.css';
 
 interface HomePageProps {
-    header: string | JSX.Element;
-    content: Array<string | JSX.Element>; 
+    preName: Array<string> | Array<JSX.Element>;
+    postName: Array<string> | Array<JSX.Element>; 
 }
-export default function Intro({ header, content }: HomePageProps) {
+export default function Intro({ preName, postName }: HomePageProps) {
     return (
         <animated.div style={useFadeIn({ delay: 0 })}className={'intro-container'}>
-            <p className={'intro-header'}>{header}</p>
             <div>
-                {content.map(c => <p className={'intro-content'}>{c}</p>)}
+                {preName.map(c => <><span className={'intro-pre-name'}>{c}</span><br/></>)}
+            </div>
+            <div>
+                {postName.map(c => <><span className={'intro-post-name'}>{c}</span><br/></>)}
             </div>
         </animated.div>
     );
