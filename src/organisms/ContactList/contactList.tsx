@@ -19,7 +19,7 @@ function Contact({ icon, link }: ContactProps) {
             {icon && link &&
             <div
                 className={'icon'}
-                onMouseEnter={() => setIconColor('#64ffda')}
+                onMouseEnter={() => setIconColor('#EEBBC3')}
                 onMouseLeave={() => setIconColor('#b4b4b4')}
             >
                 <a href={link} target="_blank" rel="noreferrer">
@@ -37,11 +37,7 @@ export function ContactList() {
     return (
         <animated.div style={useFadeIn({ delay: 2000 })} className={'list'}>
             <Contact icon={faGithub} link={'https://github.com/uint4096'}/>
-            <div className={'line'}>
-            </div>
             <Contact icon={faLinkedin} link={'https://linkedin.com/in/abhishek-kr7'}/>
-            <div className={'line'}>
-            </div>
             <Contact icon={faEnvelope} link={'https://mail.google.com/mail/?view=cm&fs=1&to=abhishek.kumar251095@gmail.com'}/>
             <Contact />
         </animated.div>
