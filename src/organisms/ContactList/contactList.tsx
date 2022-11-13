@@ -1,37 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './contactList.css';
-import { faGithub, faLinkedin, IconDefinition } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { animated } from 'react-spring';
 import { useFadeIn } from '../../Hooks/useAnimation';
-interface ContactProps {
-    icon?: IconDefinition;
-    link?: string;
-};
-
-function Contact({ icon, link }: ContactProps) {
-
-    const [iconColor, setIconColor] = useState<string>('#b4b4b4');
-
-    return (
-        <div className={'contact'}>
-            {icon && link &&
-            <div
-                className={'icon'}
-                onMouseEnter={() => setIconColor('#EEBBC3')}
-                onMouseLeave={() => setIconColor('#b4b4b4')}
-            >
-                <a href={link} target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon
-                        icon={icon}
-                        color={iconColor}
-                    />
-                </a>
-            </div>}
-        </div>
-    )
-}
+import { Icon as Contact } from '../../atoms/icon'; 
 
 export function ContactList() {
     return (
@@ -39,7 +12,6 @@ export function ContactList() {
             <Contact icon={faGithub} link={'https://github.com/uint4096'}/>
             <Contact icon={faLinkedin} link={'https://linkedin.com/in/abhishek-kr7'}/>
             <Contact icon={faEnvelope} link={'https://mail.google.com/mail/?view=cm&fs=1&to=abhishek.kumar251095@gmail.com'}/>
-            <Contact />
         </animated.div>
-    )
-}
+    );
+};

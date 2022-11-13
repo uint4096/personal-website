@@ -1,12 +1,3 @@
-.contact {
-    text-align: center;
-}
-
-.icon {
-    font-size: 2rem;
-    cursor: pointer;
-}
-
 .list {
     position: absolute;
     display: flex;
