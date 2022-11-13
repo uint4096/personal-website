@@ -6,6 +6,10 @@ import { animated } from 'react-spring';
 import './portfolio.css';
 import { useFadeIn } from '../Hooks/useAnimation';
 import { WorkExp } from '../organisms/Timeline/timeline';
+import { Card, CardProps } from '../molecules/card';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { POST_NAME, PRE_NAME, PROJECTS } from '../constants';
+import { CardGroup } from '../organisms/CardGroup/cardGroup';
 
 type Headers = 'About Me' | 'Experience' | 'Projects' | 'Resume';
 
@@ -15,39 +19,7 @@ export default function Portfolio() {
         'Experience',
         'Projects',
         'Resume'
-    ];
-
-    const PRE_NAME: Array<JSX.Element> = [
-        <span>Hi.</span>,
-        <span>My name is <span className='name'>Abhishek Kumar</span>.</span>
-    ];
-    
-    const POST_NAME: Array<JSX.Element> = [
-        <span>I am a full stack developer with slightly more preference towards backend technologies.</span>,
-        <span>In other words, I am passionate about building web applications that scale!</span>,
-        <span>
-            I primarily work with
-            <span className={'language'}> Node.js</span> and
-            <span className={'language'}> TypeScript</span>.
-            Here are a few technologies that I specialize in:
-        </span>,
-        <div className={'languages-container'}>
-            <div>
-                <ul>
-                    <li> NestJS </li>
-                    <li> MySQL </li>
-                    <li> React </li>
-                </ul>
-            </div>
-            <div>
-                <ul>
-                    <li> Express </li>
-                    <li> MongoDB </li>
-                    <li> Rust </li>
-                </ul>
-            </div>
-        </div>
-    ];
+    ];    
     
     const [ topic, setTopic ] = useState<Headers>('About Me');
 
@@ -66,7 +38,6 @@ export default function Portfolio() {
             </animated.span>
         )
     );
-
 
     // const workExp = [
     //     {
@@ -102,6 +73,8 @@ export default function Portfolio() {
         isActive: topic === header
     }));
 
+    const projects = PROJECTS.map(project => ({...project, size: 'small' as const}));
+
     return (
         <div className={'container'}>
             <div className='content'>
@@ -114,7 +87,13 @@ export default function Portfolio() {
                     <div className='primary-container'>
                         <Intro preName={preNameSet} postName={postNameSet}></Intro>
                     </div>
-                }    
+                }
+                {
+                    topic === 'Projects' &&
+                    <div className='projects-container'>
+                        <CardGroup cards={projects} />
+                    </div>
+                }
             </div>
             <div className='navbar'>
                <Navbar headerDetails={headerGroup}/> 
