@@ -1,0 +1,52 @@
+.timeline-container {
+    display: flex;
+}
+
+.timeline-axis {
+    width: 0.2rem;
+    height: 12rem;
+    background-color: #B8C1EC;
+}
+
+.timeline-index {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-left: -0.6rem;
+}
+
+.marker {
+    background-color: #B8C1EC;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.active-marker {
+    background-color: #EEBBC3;
+    width: 1.2rem;
+    height: 4rem;
+}
+
+.exp-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+ 
+.overview-company {
+    color: #FFFFFE;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.overview-company-active {
+    color: #EEBBC3;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.overview-text {
+    font-size: 1.2rem;
+    color: #B8C1EC
+}
