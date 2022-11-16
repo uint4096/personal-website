@@ -1,10 +1,13 @@
 import React from 'react';
+import { animated } from 'react-spring';
 import { Card, CardProps } from '../../molecules/card';
+import { useFadeIn } from "../../Hooks/useAnimation";
 import './cardGroup.css';
 
 export const CardGroup = ({ cards }: { cards: Array<CardProps> }) => {
     return (
-        <div className={'card-group'}>
+
+        <animated.div style={useFadeIn({ delay: 0 })} className={'card-group'}>
             {
                 cards.map((card, i) => (
                     <Card
@@ -18,6 +21,6 @@ export const CardGroup = ({ cards }: { cards: Array<CardProps> }) => {
                     />
                 ))
             }
-        </div>
+        </animated.div>
     );
 }
