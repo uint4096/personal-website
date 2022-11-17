@@ -9,7 +9,7 @@ interface HomePageProps {
 }
 export default function Intro({ preName, postName }: HomePageProps) {
     return (
-        <animated.div style={useFadeIn({ delay: 0 })}className={'intro-container'}>
+        <animated.div style={useFadeIn({ delay: 0 })} className={'intro-container'}>
             <div>
                 {preName.map(c => <><span className={'intro-pre-name'}>{c}</span><br/></>)}
             </div>

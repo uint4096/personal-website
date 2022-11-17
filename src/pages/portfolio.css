@@ -29,6 +29,14 @@
     margin-top: 8rem;
 }
 
+.topic > span {
+    width: max-content;
+}
+
+.topic >span:hover {
+    color: #EEBBC3;
+}
+
 .hr {
     height: max(0.1rem, 1px);
     width: max(25%, 30rem);

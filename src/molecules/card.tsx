@@ -1,6 +1,5 @@
 import './card.css';
 import React from 'react';
-import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { Icon, IconProps as Link } from '../atoms/icon';
 
 export interface CardProps {

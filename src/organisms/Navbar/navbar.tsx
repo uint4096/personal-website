@@ -21,6 +21,20 @@ export function Navbar({ headerDetails }: NavbarProps) {
                         />
                     </div>
                 ))}
+                <div>
+                    <a
+                        href={import.meta.env.VITE_RESUME_LINK}
+                        download="resume.pdf"
+                        target='_blank'
+                    >
+                        <Header
+                            text={'Resume'}
+                            serialNumber={headerDetails.length + 1}
+                            onClick={() => {}}
+                            isActive={false}
+                        />
+                    </a> 
+                </div>
         </animated.div>
     )
 }

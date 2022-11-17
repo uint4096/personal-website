@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ContactList } from '../organisms/ContactList/contactList';
 import Intro from '../organisms/Intro/intro';
 import { Navbar } from '../organisms/Navbar/navbar';
 import { animated } from 'react-spring';
 import './portfolio.css';
 import { useFadeIn } from '../Hooks/useAnimation';
-import { WorkExp, WorkExperience } from '../organisms/Exp/Exp';
-import { Card, CardProps } from '../molecules/card';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { WorkExperience } from '../organisms/Exp/Exp';
 import { POST_NAME, PRE_NAME, PROJECTS, workExp } from '../constants';
 import { CardGroup } from '../organisms/CardGroup/cardGroup';
 
@@ -18,7 +16,6 @@ export default function Portfolio() {
         'About Me',
         'Experience',
         'Projects',
-        'Resume'
     ];    
     
     const [ topic, setTopic ] = useState<Headers>('About Me');

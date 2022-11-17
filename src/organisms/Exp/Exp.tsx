@@ -1,5 +1,5 @@
 import { animated } from '@react-spring/web';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useFadeIn } from '../../Hooks/useAnimation'
 import { Card } from '../../molecules/card';
 import { Timeline } from '../../molecules/Timeline';
