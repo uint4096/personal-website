@@ -1,7 +1,5 @@
 import React from 'react';
-import { animated } from 'react-spring';
 import { Header, HeaderProps } from '../../atoms/header';
-import { useFadeIn } from '../../Hooks/useAnimation';
 import './navbar.css';
 
 interface NavbarProps {
@@ -10,7 +8,7 @@ interface NavbarProps {
 
 export function Navbar({ headerDetails }: NavbarProps) {
     return (
-        <animated.div style={useFadeIn({ delay: 2000 })} className={"nav"}>
+        <div className={"nav"}>
                 {headerDetails.map((b, i) => (
                     <div> 
                         <Header
@@ -35,6 +33,6 @@ export function Navbar({ headerDetails }: NavbarProps) {
                         />
                     </a> 
                 </div>
-        </animated.div>
+        </div>
     )
 }

@@ -69,7 +69,7 @@
     content: unset;
 }
 
-.small:hover > .card-head > .card-header {
+.small:hover > .card-head > .header-container > .card-header {
     color: #EEBBC3;
 }
 

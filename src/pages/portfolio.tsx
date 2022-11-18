@@ -70,10 +70,15 @@ export default function Portfolio() {
                     </div>
                 }
             </div>
-            <div className='navbar'>
+            
+            <animated.div style={useFadeIn({ delay: 4000 })} className='navbar'>
                <Navbar headerDetails={headerGroup}/> 
-            </div>
-            <ContactList />
+            </animated.div>
+
+            <animated.div style={useFadeIn({ delay: 4000 })}>
+              <ContactList />
+            </animated.div>
+            
         </div>
     );
 }
