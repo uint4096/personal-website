@@ -1,6 +1,6 @@
 import './card.css';
 import React from 'react';
-import { Icon, IconProps as Link } from '../atoms/icon';
+import { Icon, IconProps as Link } from './icon';
 
 export interface CardProps {
     size: "small" | "medium" | "large";

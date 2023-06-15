@@ -1,8 +1,8 @@
 import { animated } from '@react-spring/web';
 import React, { useMemo, useState } from 'react';
 import { useFadeIn } from '../../Hooks/useAnimation'
-import { Card } from '../../molecules/card';
-import { Timeline } from '../../molecules/Timeline';
+import { Card } from '../../utilities/card';
+import { Timeline } from '../../utilities/Timeline';
 import './Exp.css';
 
 export interface WorkExp {

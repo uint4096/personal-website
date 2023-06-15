@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, HeaderProps } from '../../atoms/header';
+import { Header, HeaderProps } from '../../utilities/header';
 import './navbar.css';
 
 interface NavbarProps {

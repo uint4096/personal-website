@@ -1,7 +1,7 @@
 import { faGithub, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import { CardProps } from './molecules/card';
+import { CardProps } from './utilities/card';
 
 export const PRE_NAME: Array<JSX.Element> = [
     <span>Hi.</span>,

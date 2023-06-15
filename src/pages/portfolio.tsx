@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { ContactList } from '../organisms/ContactList/contactList';
-import Intro from '../organisms/Intro/intro';
-import { Navbar } from '../organisms/Navbar/navbar';
+import { ContactList } from '../components/ContactList/contactList';
+import Intro from '../components/Intro/intro';
+import { Navbar } from '../components/Navbar/navbar';
 import { animated } from 'react-spring';
 import './portfolio.css';
 import { useFadeIn } from '../Hooks/useAnimation';
-import { WorkExperience } from '../organisms/Exp/Exp';
+import { WorkExperience } from '../components/Exp/Exp';
 import { POST_NAME, PRE_NAME, PROJECTS, workExp } from '../constants';
-import { CardGroup } from '../organisms/CardGroup/cardGroup';
+import { CardGroup } from '../components/CardGroup/cardGroup';
 
 type Headers = 'About Me' | 'Experience' | 'Projects' | 'Resume';
 

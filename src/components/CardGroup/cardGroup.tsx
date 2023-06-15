@@ -1,6 +1,6 @@
 import React from 'react';
 import { animated } from 'react-spring';
-import { Card, CardProps } from '../../molecules/card';
+import { Card, CardProps } from '../../utilities/card';
 import { useFadeIn } from "../../Hooks/useAnimation";
 import './cardGroup.css';
 
