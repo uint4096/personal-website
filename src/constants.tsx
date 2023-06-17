@@ -42,12 +42,10 @@ export const PROJECTS: Array<Omit<CardProps, 'size'>> = [
             {
                 link: "https://github.com/uint4096/synkremote",
                 icon: faGithub,
-                size: 'very-small' 
             },
             {
                 link: "https://www.npmjs.com/package/synkremote",
                 icon: faNpm,
-                size: "small"
             }
         ],
         content: ["A command line tool to transfer and sync local files and directories with remote servers."],

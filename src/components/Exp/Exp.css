@@ -5,7 +5,7 @@
 }
 
 .company {
-    color: #EEBBC3;
+    color: var(--color-secondary);
     text-decoration: underline;
     font-size: 2rem;
     font-weight: 900;
@@ -16,16 +16,16 @@ a {
 }
 
 .role {
-    color: #B8C1EC;
-    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-size: var(--font-size-medium);
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 0.5rem;
 }
 
 .exp-list {
-    font-size: 1.5rem;
-    color: #B8C1EC;
+    font-size: var(--font-size-medium);
+    color: var(--color-primary);
 }
 
 .exp-item + li {

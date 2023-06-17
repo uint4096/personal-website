@@ -34,13 +34,13 @@
 }
 
 .topic >span:hover {
-    color: #EEBBC3;
+    color: var(--color-secondary);
 }
 
 .hr {
     height: max(0.1rem, 1px);
     width: max(25%, 30rem);
-    background-color: #EEBBC3;
+    background-color: var(--color-secondary);
 }
 
 .navbar {
@@ -50,11 +50,11 @@
 
 .name {
     font-size: 4rem;
-    color: #EEBBC3;
+    color: var(--color-secondary);
 }
 
 .language {
-    color: #EEBBC3;
+    color: var(--color-secondary);
 }
 
 ul {

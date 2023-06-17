@@ -5,7 +5,7 @@
 .timeline-axis {
     width: 0.2rem;
     height: 12rem;
-    background-color: #B8C1EC;
+    background-color: var(--color-primary);
 }
 
 .timeline-index {
@@ -16,14 +16,14 @@
 }
 
 .marker {
-    background-color: #B8C1EC;
+    background-color: var(--color-primary);
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
 }
 
 .active-marker {
-    background-color: #EEBBC3;
+    background-color: var(--color-secondary);
     width: 1.2rem;
     height: 4rem;
 }
@@ -35,18 +35,18 @@
 }
  
 .overview-company {
-    color: #FFFFFE;
-    font-size: 1.8rem;
+    color: var(--color-header);
+    font-size: var(--font-size-large);
     cursor: pointer;
 }
 
 .overview-company-active {
-    color: #EEBBC3;
-    font-size: 1.8rem;
+    color: var(--color-secondary);
+    font-size: var(--font-size-large);
     font-weight: 900;
 }
 
 .overview-text {
-    font-size: 1.2rem;
-    color: #B8C1EC
+    font-size: var(--font-size-small);
+    color: var(--color-primary)
 }

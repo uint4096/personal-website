@@ -1,15 +1,15 @@
 .header {
-    color: #B8C1EC;
+    color: var(--color-primary);
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: var(--font-size-small);
 }
 
 .header:hover {
-    font-size: 1.4rem;
-    border-bottom: 0.1rem solid #EEBBC3;
+    font-size: var(--font-size-medium);
+    border-bottom: 0.1rem solid var(--color-secondary);
 }
 
 .active-header {
-    color: #EEBBC3;
-    font-size: 1.2rem;
+    color: var(--color-secondary);
+    font-size: var(--font-size-small);
 }
