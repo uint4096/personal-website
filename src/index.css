@@ -5,10 +5,12 @@
   --color-tertiary:#282E4B;  
   --color-border: #21234E;
   --color-header: #FFFFFE;
+
   --font-size-small: 1.2rem;
 	--font-size-medium: 1.5rem;
-	--font-size-large: 1.8rem;
-	--font-size-massive: 3.5rem;
+	--font-size-large: 1.6rem;
+	--font-size-massive: 4rem;
+  
   --font-family: "Manjari", sans-serif;
 }
 
