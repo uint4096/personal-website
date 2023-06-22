@@ -1,8 +1,0 @@
-.card-group {
-    display: grid;
-    width: 37%;
-    grid-gap: 1.5rem;
-    align-items: center;
-    margin-left: 18%;
-    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-}

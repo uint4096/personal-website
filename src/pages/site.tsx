@@ -1,6 +1,6 @@
 import './site.css';
 import React from 'react';
-import { Intro } from '../_components/Intro';
+import { Intro } from '../components/Intro';
 import { ContactList } from '../components/ContactList/contactList';
 
 export const Site = () => {
