@@ -16,7 +16,7 @@ export function Icon({ icon, link, size }: IconProps) {
   return icon && link ? (
     <div
       className={!!size ? "icons" : "p"}
-      onMouseEnter={() => setIconColor("var(--color-secondary)")}
+      onMouseEnter={() => setIconColor("var(--color-tertiary)")}
       onMouseLeave={() => setIconColor("#b4b4b4")}
     >
       <a href={link} target="_blank" rel="noreferrer">

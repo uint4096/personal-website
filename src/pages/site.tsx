@@ -2,6 +2,7 @@ import "./site.css";
 import React from "react";
 import { Intro } from "../components/Intro";
 import { ContactList } from "../components/ContactList/contactList";
+import { WorkExp } from "../components/experience";
 
 export const Site = () => {
   return (
@@ -10,10 +11,9 @@ export const Site = () => {
         <Intro />
         <ContactList />
       </div>
-      <div>
-        <div style={{ width: "42rem" }}></div>
+      <div className="exp">
         {/* <Intro /> */}
-        {/* <WorkExp /> */}
+        <WorkExp />
         {/* <Projects /> */}
         {/* <Footer /> */}
       </div>
