@@ -34,7 +34,7 @@ export const Intro = () => {
           download="resume.pdf"
           target="_blank"
         >
-          <Header text={"View Résumé"} variant="content"/>
+          <Header text={"View Résumé"} variant="content" />
         </a>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import React from 'react';
-import './card.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { Header } from './link';
+import React from "react";
+import "./card.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Header } from "./link";
 
 interface CardProps {
   title: string;
@@ -12,7 +12,7 @@ interface CardProps {
   tags: Array<string>;
 }
 
-export const Card = (({
+export const Card = ({
   title,
   subtitle,
   dateRange,
@@ -20,20 +20,22 @@ export const Card = (({
   tags,
 }: CardProps) => {
   return (
-    <div className='card'>
-      <div className='card-header'>
-        <Header text={title} variant='title'/>
+    <div className="card">
+      <div className="card-header">
+        <Header text={title} variant="title" />
       </div>
-      <div className='card-content'>
-          <div className='card-subtext'>
-            {subtitle && <span className='card-subtitle'>{subtitle}</span>}
-            {dateRange && <span className='card-date'>({dateRange})</span>}
-          </div>
-          <span className='card-description'>{description}</span>
-          <span className='card-tags'>
-            {tags.map(tag => <div className='card-tag'>{tag}</div>)}
-          </span>
+      <div className="card-content">
+        <div className="card-subtext">
+          {subtitle && <span className="card-subtitle">{subtitle}</span>}
+          {dateRange && <span className="card-date">({dateRange})</span>}
+        </div>
+        <span className="card-description">{description}</span>
+        <span className="card-tags">
+          {tags.map((tag) => (
+            <div className="card-tag">{tag}</div>
+          ))}
+        </span>
       </div>
     </div>
-  )
-});
+  );
+};

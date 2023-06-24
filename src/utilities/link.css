@@ -10,7 +10,8 @@
   font-size: var(--font-size-medium);
 }
 
-.content-header:hover, .title-header:hover {
+.content-header:hover,
+.title-header:hover {
   border-bottom: 1px solid var(--color-tertiary);
 }
 
