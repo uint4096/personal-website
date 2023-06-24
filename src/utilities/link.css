@@ -1,22 +1,25 @@
-.header {
+.title-header {
+  font-size: var(--font-size-large);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.content-header {
   color: var(--color-primary);
   cursor: pointer;
   font-size: var(--font-size-medium);
 }
 
-.header:hover {
-  border-bottom: 1px solid var(--color-secondary);
+.content-header:hover, .title-header:hover {
+  border-bottom: 1px solid var(--color-tertiary);
 }
 
-.header:hover > .link-arrow {
-  margin-left: 0.3rem;
+.content-header:hover > .link-arrow {
+  margin-left: 0.4rem;
 }
 
 .link-arrow {
+  margin-left: 0.1rem;
+  vertical-align: middle !important;
   transition: margin-left 0.2s ease-in-out;
-}
-
-.active-header {
-  color: var(--color-secondary);
-  font-size: var(--font-size-small);
 }
