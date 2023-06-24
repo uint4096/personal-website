@@ -1,6 +1,17 @@
 .card {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.card:hover {
+    background-color: rgba(var(--color-background), 0.2);
+    cursor: pointer;
+}
+
+.card:hover .card-header {
+    color: rgb(var(--color-tertiary))
 }
 
 .card-title {
@@ -10,13 +21,15 @@
 }
 
 .card-header {
-  width: 22rem;
+  white-space: nowrap;
+  width: 12rem;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  /* width: 70rem; */
 }
 
 .card-description {
@@ -48,6 +61,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  width: 35rem;
 }
 
 .card-tag {

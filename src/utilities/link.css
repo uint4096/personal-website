@@ -10,9 +10,9 @@
   font-size: var(--font-size-medium);
 }
 
-.content-header:hover,
-.title-header:hover {
-  border-bottom: 1px solid var(--color-tertiary);
+.content-header:hover {
+  border-bottom: 1px solid;
+  border-color: rgba(var(--color-tertiary), 1);
 }
 
 .content-header:hover > .link-arrow {

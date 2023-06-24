@@ -24,7 +24,7 @@ export const Intro = () => {
         </p>
         <p>
           {" "}
-          Nowadays I am helping Vita Mojo build scalable solutions for our
+          For my day job, I help Vita Mojo build scalable solutions for our
           clients in the hospitality industry.
         </p>
       </div>

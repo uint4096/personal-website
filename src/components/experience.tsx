@@ -3,15 +3,12 @@ import "./experience.css";
 import { Card } from "../utilities/card";
 
 export const WorkExp = () => {
-  const vitaMojoDescription =
-    "Vita Mojo's tech centers around solving problems for the hospitality industry. I am responsible for maintaining our core microservices based architecture, and building integrations with various delivery and payment providers.";
-
   const exp = [
     {
       title: "Vita Mojo",
       subtitle: "Backend Engineer",
       dateRange: "October 2022 - Present",
-      description: vitaMojoDescription,
+      description: "Vita Mojo's tech centers around solving problems for the hospitality industry. I am responsible for maintaining our core microservices based architecture, and building integrations with various delivery and payment providers.",
       tags: [
         "node.js",
         "TypeScript",
@@ -19,6 +16,40 @@ export const WorkExp = () => {
         "MySQL",
         "AWS Lambda",
         "DynamoDB",
+      ],
+    },
+    {
+      title: "Klenty",
+      subtitle: "Full-Stack Developer",
+      dateRange: "May 2020 - October 2022",
+      description: "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I contributed to a number of core features including an app-wide search, multiple app rewrites, and various large scale migrations.",
+      tags: [
+        "node.js",
+        "TypeScript",
+        "Express",
+        "MongoDB",
+        "RabbitMQ",
+        "AWS Lambda",
+        "Redis",
+        "ElasticSearch",
+        "CircleCI"
+      ],
+    },
+    {
+      title: "Infosys",
+      subtitle: "System Engineer",
+      dateRange: "May 2020 - October 2022",
+      description: "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I contributed to a number of core features including an app-wide search, multiple app rewrites, and various large scale migrations.",
+      tags: [
+        "node.js",
+        "TypeScript",
+        "Express",
+        "MongoDB",
+        "RabbitMQ",
+        "AWS Lambda",
+        "Redis",
+        "ElasticSearch",
+        "CircleCI"
       ],
     },
   ];

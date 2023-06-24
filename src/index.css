@@ -2,8 +2,8 @@
   font-size: clamp(13px, max(0.67vh, 0.67vw), 18px);
   --color-primary: #b8c1ec;
   --color-secondary: #d70077;
-  --color-tertiary: #d70077;
-  --color-border: #21234e;
+  --color-tertiary: 177, 0, 97;
+  --color-background: 88, 87, 89;
   --color-header: #fffffe;
 
   --font-size-small: 1.1rem;

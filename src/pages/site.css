@@ -1,16 +1,28 @@
 .container {
-  width: 80%;
   margin: auto;
-  padding: 10rem 0;
   display: flex;
+  height: 100vh;
   justify-content: center;
-  overflow: none;
   flex-direction: row;
 }
 
 .about-container {
+  position: sticky;
+  width: 50%;
+  align-items: end;
+  padding-top: 8rem;
   display: flex;
+  top: 0;
   height: 70vh;
+  align-self: flex-start;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.exp {
+  height: 100%;
+  max-height: 60rem;
+  width: 50%;
+  padding-top: 8rem;
+  align-items: center;
 }
