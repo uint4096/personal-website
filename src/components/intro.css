@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 0.1rem;
   color: var(--color-primary);
+  width: 80%;
+  margin-left: auto;
 }
 
 .name {

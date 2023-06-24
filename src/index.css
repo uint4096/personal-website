@@ -1,14 +1,14 @@
 :root {
   font-size: clamp(13px, max(0.67vh, 0.67vw), 18px);
   --color-primary: #b8c1ec;
-  --color-secondary: #eebbc3;
-  --color-tertiary: #282e4b;
+  --color-secondary: #d70077;
+  --color-tertiary: #d70077;
   --color-border: #21234e;
   --color-header: #fffffe;
 
-  --font-size-small: 1.2rem;
+  --font-size-small: 1.1rem;
   --font-size-medium: 1.5rem;
-  --font-size-large: 1.6rem;
+  --font-size-large: 1.8rem;
   --font-size-massive: 4rem;
 
   --font-family: "Manjari", sans-serif;
