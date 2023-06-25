@@ -1,3 +1,13 @@
+@media (max-width: 1023px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    gap: 2rem;
+  }
+}
+
 .card {
   display: flex;
   padding: 1rem;
