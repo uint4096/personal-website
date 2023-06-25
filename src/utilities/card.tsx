@@ -25,10 +25,10 @@ export const Card = ({
         <Header text={title} variant="title" />
       </div>
       <div className="card-content">
-        <div className="card-subtext">
+        {(subtitle || dateRange) && <div className="card-subtext">
           {subtitle && <span className="card-subtitle">{subtitle}</span>}
           {dateRange && <span className="card-date">({dateRange})</span>}
-        </div>
+        </div>}
         <span className="card-description">{description}</span>
         <span className="card-tags">
           {tags.map((tag) => (

@@ -3,6 +3,7 @@ import React from "react";
 import { Intro } from "../components/Intro";
 import { ContactList } from "../components/ContactList/contactList";
 import { WorkExp } from "../components/experience";
+import { Projects } from "../components/projects";
 
 export const Site = () => {
   return (
@@ -14,7 +15,7 @@ export const Site = () => {
       <div className="exp">
         {/* <Intro /> */}
         <WorkExp />
-        {/* <Projects /> */}
+        <Projects />
         {/* <Footer /> */}
       </div>
     </div>

@@ -1,4 +1,4 @@
-.exp-header {
+.projects-header {
   color: rgba(var(--color-tertiary));
   font-size: 2rem;
   width: 20rem;
@@ -7,11 +7,12 @@
   font-weight: 1000;
 }
 
-.exp-list {
+.projects {
   color: var(--color-primary);
   display: flex;
   margin-top: 4rem;
   flex-direction: column;
   min-width: 0;
   gap: 3rem;
+  margin-bottom: 5rem;
 }

@@ -38,33 +38,31 @@ export const WorkExp = () => {
     {
       title: "Infosys",
       subtitle: "System Engineer",
-      dateRange: "May 2020 - October 2022",
-      description: "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I contributed to a number of core features including an app-wide search, multiple app rewrites, and various large scale migrations.",
+      dateRange: "July 2018 - April 2020",
+      description: "Infosys provides a range of software solutions for a vast number of clients across the globe. I built features for a number of desktop and web applications, both for our clients, and internal. I also automated several tasks for our clients using PL/SQL.",
       tags: [
-        "node.js",
-        "TypeScript",
-        "Express",
-        "MongoDB",
-        "RabbitMQ",
-        "AWS Lambda",
-        "Redis",
-        "ElasticSearch",
-        "CircleCI"
+        "C#",
+        ".NET",
+        ".NET Core",
+        "PL/SQL"
       ],
     },
   ];
 
   return (
     <div className="exp-container">
-      {exp.map((e) => (
-        <Card
-          description={e.description}
-          title={e.title}
-          tags={e.tags}
-          dateRange={e.dateRange}
-          subtitle={e.subtitle}
-        />
-      ))}
+      <div className="exp-header">Work Experience</div>
+      <div className="exp-list">
+        {exp.map((e) => (
+          <Card
+            description={e.description}
+            title={e.title}
+            tags={e.tags}
+            dateRange={e.dateRange}
+            subtitle={e.subtitle}
+          />
+        ))} 
+      </div>
     </div>
   );
 };

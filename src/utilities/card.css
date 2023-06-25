@@ -1,6 +1,5 @@
 .card {
   display: flex;
-  gap: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
 }
@@ -22,7 +21,7 @@
 
 .card-header {
   white-space: nowrap;
-  min-width: 10rem;
+  min-width: 12rem;
 }
 
 .card-content {
