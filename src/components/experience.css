@@ -1,8 +1,8 @@
 .exp-container {
   color: var(--color-primary);
   display: flex;
-  width: 75%;
-  margin: 4rem auto;
+  margin-top: 4rem;
   flex-direction: column;
+  min-width: 0;
   gap: 3rem;
 }

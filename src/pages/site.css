@@ -4,25 +4,27 @@
   height: 100vh;
   justify-content: center;
   flex-direction: row;
+  height: auto;
+  padding: 0 10rem;
 }
 
 .about-container {
   position: sticky;
-  width: 50%;
-  align-items: end;
+  width: 60%;
+  align-items: center;
   padding-top: 8rem;
   display: flex;
   top: 0;
   height: 70vh;
-  align-self: flex-start;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .exp {
-  height: 100%;
-  max-height: 60rem;
-  width: 50%;
+  /* height: 100%; */
+  /* max-height: 60rem; */
+  display: flex;
+  max-width: 50%;
   padding-top: 8rem;
   align-items: center;
 }
