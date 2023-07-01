@@ -3,6 +3,9 @@ import React from "react";
 import { Intro } from "../components/Intro";
 import { ContactList } from "../components/ContactList/contactList";
 import { Work } from "../components/work";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowAltCircleDown, faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { useObserver } from "../Hooks/useObserver";
 
 export const Site = () => {
    const exp = [
@@ -95,15 +98,22 @@ export const Site = () => {
     },
   ];
 
+  const element = useObserver();
+
   return (
     <div className="container">
+      <a href={`#${element}`}>
+        <div className='scroll-arrow'>
+          <FontAwesomeIcon icon={faArrowAltCircleDown} size='4x'/>
+        </div>
+      </a>
       <div className="about-container">
         <Intro />
         <ContactList />
       </div>
       <div className="exp">
-        <Work work={exp} header="Work Experience"/>
-        <Work work={projects} header="Projects"/>
+        <Work work={exp} header="Work Experience" id="work"/>
+        <Work work={projects} header="Projects" id="projects"/>
       </div>
     </div>
   );

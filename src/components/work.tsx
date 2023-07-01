@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../utilities/card';
-import './work.css'
+import './work.css';
 
 interface Work {
   title: string;
@@ -11,9 +11,9 @@ interface Work {
   subtitle?: string;
 }
 
-export const Work = ({ work, header }: { work: Array<Work>, header: string }) => {
+export const Work = ({ work, header, id }: { work: Array<Work>, header: string, id: string; }) => {
   return (
-    <div>
+    <div id={id}>
       <div className="work-header">{header}</div>
       <div className="work-list">
         {work.map((w) => (

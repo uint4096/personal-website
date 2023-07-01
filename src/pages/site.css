@@ -47,4 +47,11 @@
     gap: 5rem;
     align-items: center;
   }
+
+  .scroll-arrow {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    color: rgba(var(--color-tertiary), 0.5);
+  }
 }
