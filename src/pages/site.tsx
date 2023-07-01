@@ -4,7 +4,7 @@ import { Intro } from "../components/Intro";
 import { ContactList } from "../components/ContactList/contactList";
 import { Work } from "../components/work";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleDown, faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
 import { useObserver } from "../Hooks/useObserver";
 
 export const Site = () => {
@@ -103,9 +103,8 @@ export const Site = () => {
   return (
     <div className="container">
       <a href={`#${element}`}>
-        <div className='scroll-arrow'>
-          <FontAwesomeIcon icon={faArrowAltCircleDown} size='4x'/>
-        </div>
+        {element != 'projects' && <div className='scroll-arrow arrow-top'><FontAwesomeIcon icon={faAnglesUp} size='3x'/></div>}
+        {element === 'projects' && <div className='scroll-arrow arrow-bottom'><FontAwesomeIcon icon={faAnglesDown} size='3x'/></div>}
       </a>
       <div className="about-container">
         <Intro />
