@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
 import { useObserver } from "../Hooks/useObserver";
 
+type Elements = 'work' | 'projects';
 export const Site = () => {
    const exp = [
     {
@@ -98,7 +99,12 @@ export const Site = () => {
     },
   ];
 
-  const element = useObserver();
+  const scrollMap = {
+    work: 'projects',
+    projects: 'work'
+  } as const;
+
+  const element = useObserver<Elements>('projects', scrollMap);
 
   return (
     <div className="container">

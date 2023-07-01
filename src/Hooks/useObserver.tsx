@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 
-type Elements = "work" | "projects";
+type CallbackMap<T extends string> = {
+  [k in T]?: (entries: Array<IntersectionObserverEntry>) => void;
+};
 
-export function useObserver() {
-  const [element, setElement] = useState<Elements>("projects");
-  const callback = (
-    element: Elements,
-    entries?: Array<IntersectionObserverEntry>
-  ) => entries?.forEach((entry) => entry.isIntersecting && setElement(element));
+export function useObserver<T extends string>(
+  initialElement: T,
+  stateMap: { [k in T]: T }
+) {
+  const [element, setElement] = useState<T>(initialElement);
+  const callback = (element: T, entries?: Array<IntersectionObserverEntry>) =>
+    entries?.forEach((entry) => entry.isIntersecting && setElement(element));
 
-  const stateElementMap: {
-    [k in Elements]: (entries: Array<IntersectionObserverEntry>) => void;
-  } = {
-    // header: () => getCallback('work'),
-    work: (entries) => callback("projects", entries),
-    projects: (entries) => callback("work", entries), //@todo: This should be 'header' for mobile devices.
-  };
+  const callbackMap = (Object.keys(stateMap) as Array<T>).reduce<
+    CallbackMap<T>
+  >((map, element) => {
+    map[element] = (entries: Array<IntersectionObserverEntry>) =>
+      callback(stateMap[element], entries);
+    return map;
+  }, {});
 
   useEffect(() => {
     const options = {
@@ -24,20 +27,19 @@ export function useObserver() {
       threshold: 0.5,
     };
 
-    const observers = (Object.keys(stateElementMap) as Array<Elements>).map(
-      (element) => {
-        const observer = new IntersectionObserver(
-          stateElementMap[element],
-          options
-        );
-        const target = document.querySelector(`#${element}`);
-        if (target) {
-          observer.observe(target);
-        }
-
-        return observer;
+    const observers = (Object.keys(callbackMap) as Array<T>).map((element) => {
+      const cb = callbackMap[element];
+      if (!cb) {
+        throw new Error("No callback specified!");
       }
-    );
+      const observer = new IntersectionObserver(cb, options);
+      const target = document.querySelector(`#${element}`);
+      if (target) {
+        observer.observe(target);
+      }
+
+      return observer;
+    });
 
     return () => observers.forEach((observer) => observer.disconnect());
   }, []);
