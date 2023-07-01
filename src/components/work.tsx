@@ -13,7 +13,7 @@ interface Work {
 
 export const Work = ({ work, header, id }: { work: Array<Work>, header: string, id: string; }) => {
   return (
-    <div id={id}>
+    <div className='work-container' id={id}>
       <div className="work-header">{header}</div>
       <div className="work-list">
         {work.map((w) => (

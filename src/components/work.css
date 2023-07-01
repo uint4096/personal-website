@@ -1,3 +1,7 @@
+.work-container {
+  padding-top: 4rem;
+}
+
 .work-header {
   color: rgba(var(--color-tertiary));
   font-size: 2rem;
