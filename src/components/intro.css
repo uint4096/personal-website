@@ -57,3 +57,7 @@
 .resume-link {
   padding: 3rem 0;
 }
+
+.resume-link > a {
+  text-decoration: none;
+}
