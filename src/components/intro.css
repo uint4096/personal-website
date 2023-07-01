@@ -1,7 +1,8 @@
 @media (max-width: 1023px) {
   .name {
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 600;
+    font-size-adjust: 0.6;
   }
 
   .designation {
@@ -15,6 +16,10 @@
     padding: 0.4rem 0;
     opacity: 0.7;
     line-height: 1.8rem;
+  }
+
+  .intro-container {
+    padding-top: 2rem;
   }
 }
 

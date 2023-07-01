@@ -8,6 +8,7 @@ import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
 import { useObserver } from "../Hooks/useObserver";
 
 type Elements = 'work' | 'projects';
+type MobileElements = Elements | 'header';
 export const Site = () => {
    const exp = [
     {
@@ -104,10 +105,21 @@ export const Site = () => {
     projects: 'work'
   } as const;
 
+  const mobileScrollMap = {
+    header: 'work',
+    work: 'projects',
+    projects: 'header'
+  } as const;
+
   const element = useObserver<Elements>('projects', scrollMap);
+  const mobileElement = useObserver<MobileElements>('work', mobileScrollMap, 0.3);
 
   return (
     <div className="container">
+      <a href={`#${mobileElement}`}>
+        {mobileElement === 'header' && <div className='scroll-arrow-mobile arrow-top'><FontAwesomeIcon icon={faAnglesUp} size='3x'/></div>}
+        {(mobileElement === 'work' || mobileElement === 'projects') && <div className='scroll-arrow-mobile arrow-bottom'><FontAwesomeIcon icon={faAnglesDown} size='3x'/></div>}
+      </a>
       <a href={`#${element}`}>
         {element != 'projects' && <div className='scroll-arrow arrow-top'><FontAwesomeIcon icon={faAnglesUp} size='3x'/></div>}
         {element === 'projects' && <div className='scroll-arrow arrow-bottom'><FontAwesomeIcon icon={faAnglesDown} size='3x'/></div>}

@@ -4,7 +4,7 @@ import React from "react";
 
 export const Intro = () => {
   return (
-    <div className="intro-container">
+    <div className="intro-container" id={'header'}>
       <span className="name">Abhishek Kumar</span>
       <span className="designation">Backend Engineer at Vita Mojo</span>
       <div className="about">

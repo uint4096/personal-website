@@ -13,8 +13,19 @@
     display: flex;
     padding-top: 8rem;
     flex-direction: column;
-    gap: 5rem;
     align-items: center;
+  }
+
+  .scroll-arrow {
+    display: none;
+  }
+
+  .scroll-arrow-mobile {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    color: rgb(130, 130, 130);
+    z-index: 100;
   }
 }
 
@@ -47,6 +58,17 @@
     align-items: center;
   }
 
+  .scroll-arrow {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    color: rgb(130, 130, 130);
+    z-index: 100;
+  }
+
+  .scroll-arrow-mobile {
+    display: none;
+  }
 }
 
 @keyframes bounceTop {
@@ -70,13 +92,6 @@
 }
 
 
-.scroll-arrow {
-  position: fixed;
-  bottom: 4rem;
-  right: 4rem;
-  color: rgb(130, 130, 130);
-  z-index: 100;
-}
 
 .arrow-bottom {
   animation: 1s ease-in-out 0s 1 bounceTop;

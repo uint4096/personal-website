@@ -6,7 +6,8 @@ type CallbackMap<T extends string> = {
 
 export function useObserver<T extends string>(
   initialElement: T,
-  stateMap: { [k in T]: T }
+  stateMap: { [k in T]: T },
+  threshold?: number
 ) {
   const [element, setElement] = useState<T>(initialElement);
   const callback = (element: T, entries?: Array<IntersectionObserverEntry>) =>
@@ -14,17 +15,20 @@ export function useObserver<T extends string>(
 
   const callbackMap = (Object.keys(stateMap) as Array<T>).reduce<
     CallbackMap<T>
-  >((map, element) => {
-    map[element] = (entries: Array<IntersectionObserverEntry>) =>
-      callback(stateMap[element], entries);
-    return map;
-  }, {});
+  >(
+    (map, element) => (
+      (map[element] = (entries: Array<IntersectionObserverEntry>) =>
+        callback(stateMap[element], entries)),
+      map
+    ),
+    {}
+  );
 
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: threshold ?? 0.5,
     };
 
     const observers = (Object.keys(callbackMap) as Array<T>).map((element) => {

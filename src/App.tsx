@@ -1,5 +1,4 @@
 import React from "react";
-import Portfolio from "./pages/portfolio";
 import "./App.css";
 import { Site } from "./pages/site";
 
