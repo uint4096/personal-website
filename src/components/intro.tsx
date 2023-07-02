@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Header } from "../utilities/link";
+import { Header } from "./link";
 import React from "react";
 
 export const Intro = () => {

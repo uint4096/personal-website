@@ -1,92 +1,114 @@
-import "./site.css";
-import React from "react";
+/** @jsx jsx */
+
 import { Intro } from "../components/intro";
-import { ContactList } from "../components/contact_list";
+import { ContactList } from "../components/contact-list";
 import { Work } from "../components/work";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
 import { useObserver } from "../Hooks/useObserver";
+import { exp, projects } from "./content";
+import { css, jsx, keyframes } from "@emotion/react";
 
 type Elements = "work" | "projects";
 type MobileElements = Elements | "header";
 export const Site = () => {
-  const exp = [
-    {
-      title: "Vita Mojo",
-      subtitle: "Backend Engineer",
-      dateRange: "October 2022 - Present",
-      description:
-        "Vita Mojo's tech centers around solving problems for the hospitality industry. I am responsible for maintaining our core microservices based architecture, and building integrations with various delivery and payment providers.",
-      tags: [
-        "node.js",
-        "TypeScript",
-        "NestJS",
-        "MySQL",
-        "AWS Lambda",
-        "DynamoDB",
-      ],
-      link: "https://vitamojo.com/",
-    },
-    {
-      title: "Klenty",
-      subtitle: "Full-Stack Developer",
-      dateRange: "May 2020 - October 2022",
-      description:
-        "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I contributed to a number of core features including an app-wide search, multiple app rewrites, and various large scale migrations.",
-      tags: [
-        "node.js",
-        "TypeScript",
-        "Express",
-        "MongoDB",
-        "RabbitMQ",
-        "AWS Lambda",
-        "Redis",
-        "ElasticSearch",
-        "CircleCI",
-      ],
-      link: "https://www.klenty.com/",
-    },
-    {
-      title: "Infosys",
-      subtitle: "System Engineer",
-      dateRange: "July 2018 - April 2020",
-      description:
-        "Infosys provides a range of software solutions for a vast number of clients across the globe. I built features for a number of desktop and web applications, both for our clients, and internal. I also automated several tasks for our clients using PL/SQL.",
-      tags: ["C#", ".NET", ".NET Core", "PL/SQL"],
-      link: "https://www.infosys.com/",
-    },
-  ];
+  const container = css`
+    display: flex;
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      padding: 2rem;
+    }
+    @media (min-width: 1024px) {
+      margin: auto;
+      height: 100vh;
+      height: auto;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0 8rem;
+    }
+  `;
 
-  const projects = [
-    {
-      title: "SynkRemote",
-      description:
-        "A command line tool to transfer and sync local files and directories with remote servers. It has options to include/exclude files and directories based on glob patterns.",
-      tags: ["node.js", "TypeScript"],
-      link: "https://www.npmjs.com/package/synkremote",
-    },
-    {
-      title: "StringDiffer",
-      description:
-        "A library that uses Levenshtein's algorithm to compare and transform one string into another. It contains functions to both generate steps for string conversion, and apply those steps to a string.",
-      tags: ["node.js", "TypeScript"],
-      link: "https://www.npmjs.com/package/string-differ",
-    },
-    {
-      title: "SubscribeHN",
-      description:
-        "A Telegram bot that sends you Hacker News posts based on the topics you subscribe to. It accepts commands to subscribe, unsubscribe, and list topics.",
-      tags: ["Rust", "Telegram"],
-      link: "https://github.com/uint4096/subscribe-hn",
-    },
-    {
-      title: "Ark",
-      description:
-        "A MongoDB desktop workspace. It contains features such as inline document editing and an embedded mongosh with intellisense.",
-      tags: ["TypeScript", "Electron", "MongoDB", "React"],
-      link: "https://www.arkclient.com/",
-    },
-  ];
+  const about = css`
+    @media (max-width: 1023px) {
+      position: inherit;
+    }
+    @media (min-width: 1024px) {
+      position: sticky;
+      max-width: 40%;
+      padding: 8rem;
+      display: flex;
+      top: 0;
+      height: 70vh;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  `;
+
+  const experience = css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 1023px) {
+      padding-top: 8rem;
+    }
+    @media (min-width: 1024px) {
+      padding-top: 4rem;
+    }
+  `;
+
+  const scrollArrow = css`
+    @media (max-width: 1023px) {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      position: fixed;
+      bottom: 4rem;
+      right: 4rem;
+      color: rgb(130, 130, 130);
+      z-index: 100;
+    }
+  `;
+
+  const scrollArrowMobile = css`
+    @media (max-width: 1023px) {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      color: rgb(130, 130, 130);
+      z-index: 100;
+    }
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  `;
+
+  const bounceTop = keyframes`
+    0% {
+        transform: translateY(-100%);
+        color: rgba(var(--color-tertiary), 0.7);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  `;
+
+  const bounceBottom = keyframes`
+    0% {
+        transform: translateY(100%);
+        color: rgba(var(--color-tertiary), 0.7);
+    }
+    100% {
+        transform: translateY(0);
+    }
+  `;
+
+  const arrowTop = css`
+    animation: 1s ease-in-out 0s 1 ${bounceBottom}
+  `;
+
+  const arrowBottom = css`
+    animation: 1s ease-in-out 0s 1 ${bounceTop}
+  `;
 
   const scrollMap = {
     work: "projects",
@@ -107,36 +129,36 @@ export const Site = () => {
   );
 
   return (
-    <div className="container">
+    <div css={container}>
       <a href={`#${mobileElement}`}>
         {mobileElement === "header" && (
-          <div className="scroll-arrow-mobile arrow-top">
+          <div css={[scrollArrowMobile, arrowTop]}>
             <FontAwesomeIcon icon={faAnglesUp} size="2x" />
           </div>
         )}
         {(mobileElement === "work" || mobileElement === "projects") && (
-          <div className="scroll-arrow-mobile arrow-bottom">
+          <div css={[scrollArrowMobile, arrowBottom]}>
             <FontAwesomeIcon icon={faAnglesDown} size="2x" />
           </div>
         )}
       </a>
       <a href={`#${element}`}>
         {element != "projects" && (
-          <div className="scroll-arrow arrow-top">
+          <div css={[scrollArrow, arrowTop]}>
             <FontAwesomeIcon icon={faAnglesUp} size="3x" />
           </div>
         )}
         {element === "projects" && (
-          <div className="scroll-arrow arrow-bottom">
+          <div css={[scrollArrow, arrowBottom]}>
             <FontAwesomeIcon icon={faAnglesDown} size="3x" />
           </div>
         )}
       </a>
-      <div className="about-container">
+      <div css={about}>
         <Intro />
         <ContactList />
       </div>
-      <div className="exp">
+      <div css={experience}>
         <Work work={exp} header="Work Experience" id="work" />
         <Work work={projects} header="Projects" id="projects" />
       </div>

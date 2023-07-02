@@ -1,7 +1,7 @@
 /** @jsx jsx */
 
 import { jsx } from '@emotion/react'
-import { Header } from "../utilities/link";
+import { Header } from "./link";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
