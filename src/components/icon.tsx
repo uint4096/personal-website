@@ -1,7 +1,9 @@
+/**@jsx jsx */
+
+import { css, jsx } from "@emotion/react";
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import "./icon.css";
+import { useState } from "react";
 
 export interface IconProps {
   icon: IconDefinition;
@@ -10,24 +12,26 @@ export interface IconProps {
 }
 
 export function Icon({ icon, link, size }: IconProps) {
-  const [iconColor, setIconColor] = useState<string>("#b4b4b4");
-  const className = !!size ? size : "small";
 
-  return icon && link ? (
+  const iconStyle = css`
+    font-size: 2rem;
+    cursor: pointer;
+  `; 
+
+  const [iconColor, setIconColor] = useState<string>("#b4b4b4");
+
+  return (
     <div
-      className={!!size ? "icons" : "p"}
       onMouseEnter={() => setIconColor("rgba(var(--color-tertiary))")}
       onMouseLeave={() => setIconColor("#b4b4b4")}
     >
       <a href={link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon
-          className={`icon ${className}-icon`}
+          css={iconStyle}
           icon={icon}
           color={iconColor}
         />
       </a>
     </div>
-  ) : (
-    <></>
   );
 }

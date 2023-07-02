@@ -1,7 +1,7 @@
 import "./site.css";
 import React from "react";
-import { Intro } from "../components/Intro";
-import { ContactList } from "../components/ContactList/contactList";
+import { Intro } from "../components/intro";
+import { ContactList } from "../components/contact_list";
 import { Work } from "../components/work";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";

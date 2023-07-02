@@ -1,12 +1,20 @@
 import React from "react";
-import "./contactList.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Icon as Contact } from "../../utilities/icon";
+import { Icon as Contact } from "./icon";
+import styled from "@emotion/styled";
 
 export function ContactList() {
+  const ContactList = styled.div`
+    width: 65%;
+    display: flex;
+    gap: 3rem;
+    opacity: 0.7;
+    padding: 0 0rem;
+  `;
+
   return (
-    <div className={"list"}>
+    <ContactList>
       <Contact icon={faGithub} link={"https://github.com/uint4096"} />
       <Contact
         icon={faLinkedin}
@@ -18,6 +26,6 @@ export function ContactList() {
           "https://mail.google.com/mail/?view=cm&fs=1&to=abhishek.kumar251095@gmail.com"
         }
       />
-    </div>
+    </ContactList>
   );
 }
