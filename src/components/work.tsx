@@ -1,6 +1,6 @@
-import React from 'react';
-import { Card } from './card';
-import styled from '@emotion/styled';
+import React from "react";
+import { Card } from "./card";
+import styled from "@emotion/styled";
 
 interface Work {
   title: string;
@@ -11,14 +11,21 @@ interface Work {
   subtitle?: string;
 }
 
-export const Work = ({ work, header, id }: { work: Array<Work>, header: string, id: string; }) => {
-
+export const Work = ({
+  work,
+  header,
+  id,
+}: {
+  work: Array<Work>;
+  header: string;
+  id: string;
+}) => {
   const Work = styled.div`
     padding-top: 4rem;
   `;
 
   const Header = styled.div`
-    color: rgba(var(--color-tertiary));
+    color: rgba(var(--color-secondary));
     font-size: 2rem;
     width: 20rem;
     opacity: 0.8;
@@ -37,22 +44,22 @@ export const Work = ({ work, header, id }: { work: Array<Work>, header: string, 
   `;
 
   return (
-      <div id={id}>
-        <Work>
-          <Header>{header}</Header>
-          <List>
-            {work.map((w) => (
-              <Card
-                description={w.description}
-                title={w.title}
-                tags={w.tags}
-                dateRange={w.dateRange}
-                subtitle={w.subtitle}
-                link={w.link}
-              />
-            ))} 
-          </List>
-        </Work>
-      </div>
+    <div id={id}>
+      <Work>
+        <Header>{header}</Header>
+        <List>
+          {work.map((w) => (
+            <Card
+              description={w.description}
+              title={w.title}
+              tags={w.tags}
+              dateRange={w.dateRange}
+              subtitle={w.subtitle}
+              link={w.link}
+            />
+          ))}
+        </List>
+      </Work>
+    </div>
   );
-}
+};

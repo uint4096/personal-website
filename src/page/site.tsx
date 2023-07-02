@@ -64,8 +64,11 @@ export const Site = () => {
       position: fixed;
       bottom: 4rem;
       right: 4rem;
-      color: rgb(130, 130, 130);
+      color: rgba(var(--color-header), 0.5);
       z-index: 100;
+      &:hover {
+        color: rgba(var(--color-secondary), 0.7);
+      }
     }
   `;
 
@@ -73,9 +76,13 @@ export const Site = () => {
     @media (max-width: 1023px) {
       position: fixed;
       bottom: 2rem;
+      rgba(var(--color-header), 0.5)
       right: 2rem;
       color: rgb(130, 130, 130);
       z-index: 100;
+      &:hover {
+        color: rgba(var(--color-secondary), 0.7)
+      }
     }
     @media (min-width: 1024px) {
       display: none;
@@ -85,7 +92,7 @@ export const Site = () => {
   const bounceTop = keyframes`
     0% {
         transform: translateY(-100%);
-        color: rgba(var(--color-tertiary), 0.7);
+        color: rgba(var(--color-secondary), 0.7);
     }
     100% {
         transform: translateY(0);
@@ -95,7 +102,7 @@ export const Site = () => {
   const bounceBottom = keyframes`
     0% {
         transform: translateY(100%);
-        color: rgba(var(--color-tertiary), 0.7);
+        color: rgba(var(--color-secondary), 0.7);
     }
     100% {
         transform: translateY(0);
@@ -103,11 +110,11 @@ export const Site = () => {
   `;
 
   const arrowTop = css`
-    animation: 1s ease-in-out 0s 1 ${bounceBottom}
+    animation: 1s ease-in-out 0s 1 ${bounceBottom};
   `;
 
   const arrowBottom = css`
-    animation: 1s ease-in-out 0s 1 ${bounceTop}
+    animation: 1s ease-in-out 0s 1 ${bounceTop};
   `;
 
   const scrollMap = {

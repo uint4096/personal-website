@@ -1,9 +1,6 @@
 /** @jsx jsx */
 
-import {
-  faArrowRight,
-  faLink,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "@emotion/styled";
 import { jsx, css } from "@emotion/react";
@@ -15,9 +12,8 @@ export interface HeaderProps {
 }
 
 export function Header({ text, onClick, variant }: HeaderProps) {
-
   const TitleHeader = styled.span`
-    font-size: var(--font-size-large);
+    font-size: var(--font-l);
     cursor: pointer;
     font-weight: 600;
   `;
@@ -25,11 +21,11 @@ export function Header({ text, onClick, variant }: HeaderProps) {
   const ContentHeader = styled.span`
     color: var(--color-primary);
     cursor: pointer;
-    font-size: var(--font-size-medium);
+    font-size: var(--font-m);
     &:hover {
       border-bottom: 1px solid;
-      border-color: rgba(var(--color-tertiary), 1);
-    };
+      border-color: rgba(var(--color-secondary), 1);
+    }
     &:hover .link-arrow {
       margin-left: 0.4rem;
     }
@@ -40,8 +36,8 @@ export function Header({ text, onClick, variant }: HeaderProps) {
     vertical-align: middle !important;
     transition: margin-left 0.2s ease-in-out;
   `;
-  
-  const Header = variant === 'title' ? TitleHeader : ContentHeader;
+
+  const Header = variant === "title" ? TitleHeader : ContentHeader;
 
   return (
     <Header
@@ -55,13 +51,18 @@ export function Header({ text, onClick, variant }: HeaderProps) {
             size="xs"
             css={linkArrow}
             icon={faArrowRight}
-            className={'link-arrow'}
+            className={"link-arrow"}
           />
         </span>
       )}
       {variant === "title" && (
         <span>
-          <FontAwesomeIcon css={linkArrow} size="xs" className="link-arrow" icon={faLink} />{" "}
+          <FontAwesomeIcon
+            css={linkArrow}
+            size="xs"
+            className="link-arrow"
+            icon={faLink}
+          />{" "}
           {text}
         </span>
       )}

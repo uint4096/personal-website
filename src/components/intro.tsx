@@ -8,48 +8,48 @@ export const Intro = () => {
     flex-direction: column;
     gap: 0.1rem;
     color: var(--color-primary);
-    @media(max-width: 1023px) {
+    @media (max-width: 1023px) {
       padding-top: 2rem;
     }
   `;
 
   const Name = styled.span`
     font-weight: 600;
-    @media(max-width: 1023px) {
+    @media (max-width: 1023px) {
       font-size: 3.2rem;
       font-size-adjust: 0.6;
     }
     @media (min-width: 1024px) {
-      font-size: var(--font-size-massive);
+      font-size: var(--font-xl);
     }
   `;
 
   const Designation = styled.span`
     padding: 0 0.2rem;
     font-weight: 600;
-    @media(max-width: 1023px) {
-      font-size: 1.3rem;
+    @media (max-width: 1023px) {
+      font-size: var(--font-sm);
     }
     @media (min-width: 1024px) {
-      font-size: var(--font-size-large);
+      font-size: var(--font-l);
     }
   `;
 
   const About = styled.div`
     padding: 0.4rem 0;
     opacity: 0.7;
-    @media(max-width: 1023px) {
+    @media (max-width: 1023px) {
       font-size: 1.2rem;
       line-height: 1.8rem;
     }
     @media (min-width: 1024px) {
-      font-size: var(--font-size-medium);
+      font-size: var(--font-m);
       line-height: 2rem;
     }
   `;
 
   const HighlightedText = styled.span`
-    color: var(--color-secondary);
+    color: rgba(var(--color-secondary), 1);
   `;
 
   const ResumeLink = styled.div`
@@ -61,7 +61,7 @@ export const Intro = () => {
   `;
 
   return (
-    <div id={'header'}>
+    <div id={"header"}>
       <Intro>
         <Name>Abhishek Kumar</Name>
         <Designation>Backend Engineer at Vita Mojo</Designation>
