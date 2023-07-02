@@ -36,7 +36,7 @@ export function useObserver<T extends string>(
       if (!cb) {
         throw new Error("No callback specified!");
       }
-      const observer = new IntersectionObserver(cb, options);
+      const observer = new IntersectionObserver(cb!, options);
       const target = document.querySelector(`#${element}`);
       if (target) {
         observer.observe(target);
