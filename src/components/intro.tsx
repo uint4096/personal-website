@@ -82,7 +82,7 @@ export const Intro = () => {
           </p>
           <p>
             {" "}
-            For my day job, I help Vita Mojo build scalable solutions for our
+            For my day job, I help Vita Mojo build robust and efficient solutions for our
             clients in the hospitality industry.
           </p>
         </About>

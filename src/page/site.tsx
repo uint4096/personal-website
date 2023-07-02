@@ -5,7 +5,7 @@ import { ContactList } from "../components/contact-list";
 import { Work } from "../components/work";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
-import { useObserver } from "../Hooks/useObserver";
+import { useObserver } from "../hooks/useObserver";
 import { exp, projects } from "./content";
 import { css, jsx, keyframes } from "@emotion/react";
 
@@ -76,9 +76,8 @@ export const Site = () => {
     @media (max-width: 1023px) {
       position: fixed;
       bottom: 2rem;
-      rgba(var(--color-header), 0.5)
       right: 2rem;
-      color: rgb(130, 130, 130);
+      color: rgba(var(--color-header), 0.5);
       z-index: 100;
       &:hover {
         color: rgba(var(--color-secondary), 0.7)

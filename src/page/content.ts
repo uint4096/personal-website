@@ -4,7 +4,7 @@ export const exp = [
     subtitle: "Backend Engineer",
     dateRange: "October 2022 - Present",
     description:
-      "Vita Mojo's tech centers around solving problems for the hospitality industry. I am responsible for maintaining our core microservices based architecture, and building integrations with various delivery and payment providers.",
+      "Vita Mojo's technology revolves around addressing challenges in the hospitality industry. I am responsible for maintaining our core microservices-based architecture, as well as developing and maintaining integrations with various delivery and payment providers.",
     tags: [
       "node.js",
       "TypeScript",
@@ -20,7 +20,7 @@ export const exp = [
     subtitle: "Full-Stack Developer",
     dateRange: "May 2020 - October 2022",
     description:
-      "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I contributed to a number of core features including an app-wide search, multiple app rewrites, and various large scale migrations.",
+      "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I made significant contributions to several core features, such as implementing an app-wide search, undertaking multiple app rewrites, and executing various large-scale migrations.",
     tags: [
       "node.js",
       "TypeScript",
@@ -39,7 +39,7 @@ export const exp = [
     subtitle: "System Engineer",
     dateRange: "July 2018 - April 2020",
     description:
-      "Infosys provides a range of software solutions for a vast number of clients across the globe. I built features for a number of desktop and web applications, both for our clients, and internal. I also automated several tasks for our clients using PL/SQL.",
+      "Infosys provides a range of software solutions for a vast number of clients across the globe. I developed features for a number of desktop and web applications, catering to both our external clients, and internal needs. I also automated several tasks for our clients using PL/SQL.",
     tags: ["C#", ".NET", ".NET Core", "PL/SQL"],
     link: "https://www.infosys.com/",
   },
