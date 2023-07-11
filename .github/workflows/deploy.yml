@@ -25,6 +25,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: registry.digitalocean.com/${{ secrets.REGISTRY }}/pw:latest
+          tags: registry.digitalocean.com/${{ secrets.DO_REGISTRY }}/pw:latest
           build-args: |
             VITE_RESUME_LINK=${{ vars.RESUME_LINK }}
