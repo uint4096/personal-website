@@ -28,3 +28,19 @@ jobs:
           tags: registry.digitalocean.com/${{ secrets.DO_REGISTRY }}/pw:latest
           build-args: |
             VITE_RESUME_LINK=${{ vars.RESUME_LINK }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update Containers
+        uses: appleboy/ssh-action@v0.1.10
+        env:
+          TOKEN: ${{ secrets.DO_TOKEN }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          script: |
+            docker login registry.digitalocean.com --username=$TOKEN --password=$TOKEN
+            docker-compose pull
+            docker-compose up -d --remove-orphans
