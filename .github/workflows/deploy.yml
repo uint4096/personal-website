@@ -41,6 +41,6 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           script: |
-            docker login registry.digitalocean.com --username=$TOKEN --password=$TOKEN
+            echo $TOKEN | docker login registry.digitalocean.com --username=$TOKEN --password-stdin
             docker-compose pull
             docker-compose up -d --remove-orphans
