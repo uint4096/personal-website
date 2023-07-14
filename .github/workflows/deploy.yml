@@ -30,6 +30,7 @@ jobs:
             VITE_RESUME_LINK=${{ vars.RESUME_LINK }}
 
   deploy:
+    needs: build-and-push
     runs-on: ubuntu-latest
     steps:
       - name: Update Containers
