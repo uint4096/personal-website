@@ -68,22 +68,18 @@ export const Intro = () => {
         <About>
           <p>
             {" "}
-            I am a full stack developer with slightly more preference towards
-            backend technologies. In other words, I am passionate about building
-            web applications that scale!
+            I'm a <HighlightedText>full-stack developer</HighlightedText> with a passion for building web applications that scale!
           </p>
           <p>
             {" "}
-            In over 5 years as a developer, I have worked with a number of
-            languages and frameworks. These days I focus primarily on{" "}
-            <HighlightedText>TypeScript</HighlightedText> and{" "}
-            <HighlightedText>node.js</HighlightedText>, although I've also
-            started to dabble in <HighlightedText>Rust</HighlightedText>.
+            Over the past 6+ years, I've had the chance to work with a variety of languages and frameworks.
+            These days, you'll find me knee-deep in <HighlightedText>TypeScript</HighlightedText> and <HighlightedText>Node.js</HighlightedText>,
+            with a side of <HighlightedText>Rust</HighlightedText> for good measure.
           </p>
           <p>
             {" "}
-            For my day job, I help Vita Mojo build robust and efficient solutions for our
-            clients in the hospitality industry.
+            When I'm not tinkering with personal projects, I'm helping Vita Mojo craft robust
+            and efficient solutions for our clients in the hospitality industry.
           </p>
         </About>
         <ResumeLink>

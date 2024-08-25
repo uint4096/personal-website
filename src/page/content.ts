@@ -6,12 +6,13 @@ export const exp = [
     description:
       "Vita Mojo's technology revolves around addressing challenges in the hospitality industry. I am responsible for maintaining our core microservices-based architecture, as well as developing and maintaining integrations with various delivery and payment providers.",
     tags: [
-      "node.js",
+      "Node.js",
       "TypeScript",
       "NestJS",
       "MySQL",
       "AWS Lambda",
       "DynamoDB",
+      "Terraform"
     ],
     link: "https://vitamojo.com/",
   },
@@ -22,7 +23,7 @@ export const exp = [
     description:
       "Klenty is a sales engagement platform that provides a variety of solutions for communicating with and managing prospects. I made significant contributions to several core features, such as implementing an app-wide search, undertaking multiple app rewrites, and executing various large-scale migrations.",
     tags: [
-      "node.js",
+      "Node.js",
       "TypeScript",
       "Express",
       "MongoDB",
@@ -50,14 +51,14 @@ export const projects = [
     title: "SynkRemote",
     description:
       "A command line tool to transfer and sync local files and directories with remote servers. It has options to include/exclude files and directories based on glob patterns.",
-    tags: ["node.js", "TypeScript"],
+    tags: ["Node.js", "TypeScript"],
     link: "https://www.npmjs.com/package/synkremote",
   },
   {
     title: "StringDiffer",
     description:
       "A library that uses Levenshtein's algorithm to compare and transform one string into another. It contains functions to both generate steps for string conversion, and apply those steps to a string.",
-    tags: ["node.js", "TypeScript"],
+    tags: ["Node.js", "TypeScript"],
     link: "https://www.npmjs.com/package/string-differ",
   },
   {
