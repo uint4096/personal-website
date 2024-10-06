@@ -1,6 +1,4 @@
-/** @jsx jsx */
-
-import { jsx } from "@emotion/react";
+import React from 'react';
 import { Header } from "./link";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
@@ -95,7 +93,6 @@ export const Card = ({
     background-color: rgba(var(--color-secondary), 0.2);
     display: flex;
     height: 1.5rem;
-    align-items: end;
     opacity: 0.7;
     color: rgb(var(--color-header));
     font-weight: 800;

@@ -1,9 +1,8 @@
-/** @jsx jsx */
-
+import React from 'react';
 import { faArrowRight, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "@emotion/styled";
-import { jsx, css } from "@emotion/react";
+import { css } from "@emotion/react";
 
 export interface HeaderProps {
   text: string;

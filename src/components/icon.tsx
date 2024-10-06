@@ -1,6 +1,5 @@
-/**@jsx jsx */
-
-import { css, jsx } from "@emotion/react";
+import React from 'react';
+import { css } from "@emotion/react";
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";

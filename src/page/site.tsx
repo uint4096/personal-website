@@ -1,5 +1,3 @@
-/** @jsx jsx */
-
 import { Intro } from "../components/intro";
 import { ContactList } from "../components/contact-list";
 import { Work } from "../components/work";
@@ -7,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
 import { useObserver } from "../hooks/useObserver";
 import { exp, projects } from "./content";
-import { css, jsx, keyframes } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
+import React from 'react';
 
 type Elements = "work" | "projects";
 type MobileElements = Elements | "header";
