@@ -72,7 +72,7 @@ export const Intro = () => {
           </p>
           <p>
             {" "}
-            Over the past 6+ years, I've had the chance to work with a variety of languages and frameworks.
+            Over the past 7+ years, I've had the chance to work with a variety of languages and frameworks.
             These days, you'll find me knee-deep in <HighlightedText>TypeScript</HighlightedText> and <HighlightedText>Node.js</HighlightedText>,
             with a side of <HighlightedText>Rust</HighlightedText> for good measure.
           </p>

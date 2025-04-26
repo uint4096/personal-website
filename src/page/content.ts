@@ -57,7 +57,7 @@ export const projects = [
   {
     title: "StringDiffer",
     description:
-      "A library that uses Levenshtein's algorithm to compare and transform one string into another. It contains functions to both generate steps for string conversion, and apply those steps to a string.",
+      "A library that uses Myers diff algorithm to compare and transform one string into another. It contains functions to both generate steps for string conversion, and apply those steps to a string.",
     tags: ["Node.js", "TypeScript"],
     link: "https://www.npmjs.com/package/string-differ",
   },
@@ -69,10 +69,10 @@ export const projects = [
     link: "https://github.com/uint4096/subscribe-hn",
   },
   {
-    title: "Ark",
+    title: "Pyxis",
     description:
-      "A MongoDB desktop workspace. It contains features such as inline document editing and an embedded mongosh with intellisense.",
-    tags: ["TypeScript", "Electron", "MongoDB", "React"],
-    link: "https://www.arkclient.com/",
+      "An offline-first, markdown based text editor with cross-device synchronization.",
+    tags: ["TypeScript", "Rust", "React", "SQLite", "DynamoDB"],
+    link: "https://pyxis.ink",
   },
 ];
