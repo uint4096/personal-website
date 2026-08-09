@@ -5,16 +5,16 @@
 <style>
     footer {
         width: 100%;
-        position: fixed;
-        bottom: 0;
-        padding: 1em 0;
+        max-width: var(--measure);
+        margin-inline: auto;
+        padding-block: 1.5rem;
+        padding-inline: var(--gutter);
     }
     p {
-        font-family: "JetBrains Mono", monospace;
-        font-size: calc(0.65rem + 0.15vw);
-        color: oklch(0.5 0.01 70);
+        font-family: var(--font-mono);
+        font-size: var(--step--1);
+        color: var(--text-dim);
         letter-spacing: 0.02em;
-        margin: auto;
-        width: max-content;
+        margin: 0;
     }
 </style>

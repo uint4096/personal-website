@@ -1,19 +1,23 @@
 ---
 interface Props {
-    children: any;
-    colorOverride?: string;
+    variant?: "default" | "muted";
 }
 
-const { children, colorOverride = "oklch(0.9, 0.012, 80)" } = Astro.props;
+const { variant = "default" } = Astro.props;
 ---
 
-<p><slot /></p>
+<p class={variant}><slot /></p>
 
-<style define:vars={{ colorOverride }}>
+<style>
     p {
-        color: var(--colorOverride);
-        font-size: clamp(0.7rem, 0.8rem + 0.5vw, 2rem);
+        font-size: var(--step-0);
         line-height: 1.62;
         letter-spacing: -0.004em;
+    }
+    .default {
+        color: var(--text);
+    }
+    .muted {
+        color: var(--text-muted);
     }
 </style>

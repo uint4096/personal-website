@@ -1,6 +1,8 @@
 ---
 import Footer from "@components/Footer.astro";
 
+import "@styles/global.css";
+
 interface Props {
     title: string;
 }
@@ -29,12 +31,3 @@ const { title } = Astro.props;
         <Footer />
     </body>
 </html>
-
-<style>
-    :root {
-        font-family: "Newsreader", Georgia, serif;
-        background-color: #14110d;
-        color: oklch(0.9 0.012 80);
-        box-sizing: border-box;
-    }
-</style>
