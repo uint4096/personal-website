@@ -1,0 +1,19 @@
+---
+interface Props {
+    children: any;
+    colorOverride?: string;
+}
+
+const { children, colorOverride = "oklch(0.9, 0.012, 80)" } = Astro.props;
+---
+
+<p><slot /></p>
+
+<style define:vars={{ colorOverride }}>
+    p {
+        color: var(--colorOverride);
+        font-size: clamp(0.7rem, 0.8rem + 0.5vw, 2rem);
+        line-height: 1.62;
+        letter-spacing: -0.004em;
+    }
+</style>
