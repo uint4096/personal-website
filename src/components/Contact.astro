@@ -15,6 +15,7 @@ const { title, link } = Astro.props;
 <style>
     span {
         color: var(--text-dim);
+        transition: color 0.15s ease;
     }
 
     a {
@@ -24,9 +25,27 @@ const { title, link } = Astro.props;
         display: flex;
         align-items: baseline;
         gap: 0.5em;
-        padding: 0.5vw;
+        padding: 0.25vw;
         color: var(--text-muted);
         border-bottom: 1px solid var(--rule);
-        transition: color 0.15s;
+        transition:
+            color 0.15s ease,
+            border-color 0.15s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+        color: var(--accent);
+        border-bottom-color: var(--accent-rule);
+    }
+
+    a:hover span,
+    a:focus-visible span {
+        color: inherit;
+    }
+
+    a:focus-visible {
+        outline: 1px solid var(--accent-rule);
+        outline-offset: 0.15em;
     }
 </style>

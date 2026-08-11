@@ -1,5 +1,6 @@
 ---
 import type { ComponentProps } from "astro/types";
+import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
@@ -8,6 +9,7 @@ import Para from "@components/Para.astro";
 import Contact from "@components/Contact.astro";
 
 import Arrow from "../assets/arrow.svg";
+import Post from "@components/Post.astro";
 
 const NAME = "Abhishek Kumar";
 
@@ -29,6 +31,11 @@ const contacts: Array<ComponentProps<typeof Contact>> = [
         link: "https://drive.google.com/file/d/1bGwYtS5pRad5FU64S1TLQXo_RI-5OVln/view?usp=sharing",
     },
 ];
+
+const blog = await getCollection("blog");
+const posts = blog.sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
 ---
 
 <BaseLayout title={NAME}>
@@ -66,6 +73,12 @@ const contacts: Array<ComponentProps<typeof Contact>> = [
                 }
             </section>
         </section>
+        <section class="writing" id="writing">
+            <h5>Writing</h5>
+            <div class="posts">
+                {posts.map((post) => <Post {...post.data} />)}
+            </div>
+        </section>
     </div>
 </BaseLayout>
 
@@ -74,8 +87,8 @@ const contacts: Array<ComponentProps<typeof Contact>> = [
         flex: 1;
         min-height: 0;
         display: grid;
-        grid-template-columns: minmax(0px, 1.28fr) minmax(0px, 0.9fr);
-        gap: clamp(2rem, 6vw, 6rem);
+        grid-template-columns: minmax(0px, 1.14fr) minmax(0px, 1fr);
+        gap: clamp(2rem, 9vw, 11rem);
         width: 100%;
         max-width: var(--measure);
         margin-inline: auto;
