@@ -1,17 +1,13 @@
 ---
 import type { InferEntrySchema } from "astro:content";
+import { formatTime } from "@helpers/format-time";
 
 interface Props extends InferEntrySchema<"blog"> {
     id: string;
 }
 
-const { date: _date, title, id } = Astro.props;
-const date = new Date(_date);
-const formatted = new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-}).format(date);
+const { date, title, id } = Astro.props;
+const formatted = formatTime(date);
 ---
 
 <article>

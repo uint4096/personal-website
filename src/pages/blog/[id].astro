@@ -4,6 +4,7 @@ import { render } from "astro:content";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { formatTime } from "@helpers/format-time";
 
 export const getStaticPaths = (async () => {
     const posts = await getCollection("blog");
@@ -15,12 +16,20 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const { date } = post.data;
+const formattedDt = formatTime(date);
 ---
 
 <BaseLayout title={post.data.title}>
+    <a href={import.meta.env["PUBLIC_HOME_PAGE"]} class="backlink"
+        >&larr; Abhishek Kumar</a
+    >
+
+    <time datetime={date.toISOString()}>{formattedDt}</time>
+
     <h1>{post.data.title}</h1>
 
-    <span>{post.data.date}</span>
     <Content />
 </BaseLayout>
 
@@ -40,8 +49,16 @@ const { Content } = await render(post);
         max-width: var(--measure-prose);
         margin-inline: auto;
     }
-    span {
-        order: 0;
+    .backlink {
+        text-decoration: none;
+        border: none;
+        line-height: 1.5;
+        margin-bottom: 2em;
+        font-family: var(--font-mono);
+        font-size: var(--step--1);
+        opacity: 0.8;
+    }
+    time {
         display: block;
         margin-block: 0;
         font-family: var(--font-mono);
@@ -51,7 +68,6 @@ const { Content } = await render(post);
         color: var(--text-faint);
     }
     h1 {
-        order: 1;
         margin-block: 1.375rem 0;
         font-weight: 500;
         font-size: var(--step-4);
@@ -220,7 +236,7 @@ const { Content } = await render(post);
         color: var(--text-strong);
     }
 
-    :global(body > span + *) {
+    :global(body > time + *) {
         margin-block-start: clamp(2.5rem, 6vh, 4rem);
     }
     :global(body > footer) {
