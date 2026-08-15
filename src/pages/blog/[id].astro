@@ -1,0 +1,229 @@
+---
+import type { GetStaticPaths } from "astro";
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+export const getStaticPaths = (async () => {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { id: post.id },
+        props: { post },
+    }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={post.data.title}>
+    <h1>{post.data.title}</h1>
+
+    <span>{post.data.date}</span>
+    <Content />
+</BaseLayout>
+
+<script src="../../event-handlers/image-click.ts"></script>
+
+<style>
+    :global(body) {
+        padding-inline: var(--gutter);
+        padding-block-start: clamp(2.5rem, 8vh, 5.5rem);
+        line-height: 1.68;
+        letter-spacing: -0.003em;
+        text-wrap: pretty;
+    }
+    :global(body > *) {
+        order: 2;
+        width: 100%;
+        max-width: var(--measure-prose);
+        margin-inline: auto;
+    }
+    span {
+        order: 0;
+        display: block;
+        margin-block: 0;
+        font-family: var(--font-mono);
+        font-size: var(--step--2);
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+        color: var(--text-faint);
+    }
+    h1 {
+        order: 1;
+        margin-block: 1.375rem 0;
+        font-weight: 500;
+        font-size: var(--step-4);
+        line-height: 1.04;
+        letter-spacing: -0.02em;
+        color: var(--text-strong);
+        text-wrap: balance;
+    }
+    :global(body > * + *) {
+        margin-block-start: 1em;
+    }
+    :global(body > p) {
+        margin-block: 0.95em 0;
+    }
+    :global(body > h2) {
+        font-size: var(--step-3);
+        margin-block-start: 2em;
+    }
+    :global(body > h3) {
+        font-size: var(--step-2);
+        margin-block-start: 1.9em;
+    }
+    :global(body > h4) {
+        font-size: var(--step-1);
+        margin-block-start: 1.8em;
+    }
+    :global(body > :is(h2, h3, h4)) {
+        font-weight: 600;
+        line-height: 1.22;
+        letter-spacing: -0.015em;
+        color: var(--text-strong);
+        text-wrap: balance;
+    }
+    :global(body > :is(h2, h3, h4) + *) {
+        margin-block-start: calc(0.65 * var(--step-0));
+    }
+
+    :global(body > :is(ul, ol)) {
+        margin-block-start: 0.8em;
+        padding-inline-start: 1.35em;
+    }
+    :global(body li + li) {
+        margin-block-start: 0.5em;
+    }
+    :global(body li) {
+        padding-inline-start: 0.3em;
+    }
+    :global(body li::marker) {
+        color: var(--text-dim);
+    }
+    :global(body > blockquote) {
+        margin-block-start: calc(1.8 * var(--step-0));
+        padding-block: 0.25rem;
+        padding-inline-start: 1.625rem;
+        border-inline-start: 3px solid var(--accent-deep);
+        font-size: var(--step-0);
+        opacity: 0.8;
+        line-height: 1.5;
+    }
+    :global(body > blockquote:has(> * + *)) {
+        padding: 1.25rem 1.5rem;
+        border: 1px solid var(--callout-rule);
+        border-radius: 6px;
+        background: var(--callout-bg);
+        font-style: normal;
+        font-size: var(--step-0);
+        line-height: 1.6;
+    }
+    :global(body > blockquote > *) {
+        margin-block: 0 0.9em;
+    }
+    :global(body > blockquote > *:last-child) {
+        margin-block-end: 0;
+    }
+
+    :global(body > pre) {
+        margin-block-start: calc(1.6 * var(--step-0));
+        padding: 1.125rem 1.25rem;
+        border: 1px solid var(--code-rule);
+        border-radius: 8px;
+        background-color: var(--code-bg) !important;
+        font-size: var(--step--1);
+        line-height: 1.7;
+        letter-spacing: 0;
+        tab-size: 4;
+    }
+    :global(body code) {
+        font-family: var(--font-mono);
+        font-size: 0.75em;
+        background: var(--code-inline-bg);
+        padding: 0.0625rem 0.3125rem;
+        border-radius: 3px;
+    }
+    :global(body pre code) {
+        font-size: inherit;
+        background: none;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    :global(body > figure) {
+        margin-block-start: 2em;
+    }
+    :global(body img) {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--code-rule);
+        border-radius: 8px;
+        cursor: zoom-in;
+        transition: transform 0.28s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+    :global(html) {
+        scrollbar-gutter: stable;
+    }
+    :global(body::after) {
+        content: "";
+        opacity: 0;
+        z-index: 1;
+        background: oklch(0.14 0.01 60 / 0.45);
+        position: fixed;
+        transition: opacity 0.25s ease;
+        backdrop-filter: blur(1px);
+        inset: 0;
+        pointer-events: none;
+    }
+    :global(body:has(.img-clicked)) {
+        overflow: hidden;
+    }
+    :global(body:has(.img-clicked))::after {
+        opacity: 1;
+    }
+    :global(.img-clicked) {
+        position: relative;
+        z-index: 2;
+        cursor: zoom-out;
+        transform: translate(var(--dx, 0px), var(--dy, 0px)) scale(var(--k, 1));
+    }
+    @media (prefers-reduced-motion: reduce) {
+        :global(body img) {
+            transition: none;
+        }
+    }
+    :global(body figcaption) {
+        margin-block-start: 0.75rem;
+        font-family: var(--font-mono);
+        font-size: var(--step--2);
+        letter-spacing: 0.02em;
+        line-height: 1.5;
+        color: var(--text-faint);
+        text-align: center;
+    }
+
+    :global(body a) {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--accent-rule);
+        transition: border-color 0.15s ease;
+    }
+    :global(body a:hover),
+    :global(body a:focus-visible) {
+        border-bottom-color: var(--accent);
+    }
+    :global(body strong) {
+        font-weight: 600;
+        color: var(--text-strong);
+    }
+
+    :global(body > span + *) {
+        margin-block-start: clamp(2.5rem, 6vh, 4rem);
+    }
+    :global(body > footer) {
+        margin-block-start: clamp(3rem, 8vh, 6rem);
+    }
+</style>

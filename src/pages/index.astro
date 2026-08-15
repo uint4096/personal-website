@@ -76,7 +76,7 @@ const posts = blog.sort(
         <section class="writing" id="writing">
             <h5>Writing</h5>
             <div class="posts">
-                {posts.map((post) => <Post {...post.data} />)}
+                {posts.map((post) => <Post {...post.data} id={post.id} />)}
             </div>
         </section>
     </div>

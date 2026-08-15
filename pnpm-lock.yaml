@@ -5,9 +5,21 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@astrojs/markdown-satteri':
+    specifier: ^0.3.5
+    version: 0.3.5
   astro:
     specifier: ^7.2.0
     version: 7.2.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)
+  satteri:
+    specifier: ^0.9.5
+    version: 0.9.5
+  satteri-callouts:
+    specifier: ^1.0.0
+    version: 1.0.0(satteri@0.9.5)
+  sharp:
+    specifier: ^0.35.3
+    version: 0.35.3
 
 packages:
 
@@ -576,7 +588,6 @@ packages:
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
     engines: {node: '>=18'}
     dev: false
-    optional: true
 
   /@img/sharp-darwin-arm64@0.35.3:
     resolution: {integrity: sha512-RMnFX7YQsMoh7lWfcM4NEHHymBX/rLuKNPVM84XE9ONPcaSCDgE7CHIHpSgPcO2xcRthgBy1HfNO319mwhIAkg==}
@@ -2021,6 +2032,17 @@ packages:
       '@rolldown/binding-win32-x64-msvc': 1.2.3
     dev: false
 
+  /satteri-callouts@1.0.0(satteri@0.9.5):
+    resolution: {integrity: sha512-yFsyX9aFPO8PiaU5ZZuXxxOUr5X460CfeiUK12rPdJZWGMoigUZ7gb+L/bCQWMfvDcaLnR08wjRZw4kHl5vm/A==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      satteri: ^0.9.4
+    dependencies:
+      hast-util-from-html: 2.0.3
+      hast-util-to-html: 9.0.5
+      satteri: 0.9.5
+    dev: false
+
   /satteri@0.9.5:
     resolution: {integrity: sha512-ZuWVl+vnM64y+/TtX8Kosv2c00W+hLQiiwnEL6H0UKVVrxFqMw4D2CJHHQaouVd89OAhtBBfjWLqhKi3TVUV4w==}
     dependencies:
@@ -2091,7 +2113,6 @@ packages:
       '@img/sharp-win32-ia32': 0.35.3
       '@img/sharp-win32-x64': 0.35.3
     dev: false
-    optional: true
 
   /shiki@4.4.2:
     resolution: {integrity: sha512-P8F/dFhRevaw2uSdeIYlq/5SXZNY85DPtmXQ947gD1Zj2JqO5AkNvVVBar0Me9JkFx3uzVud/qOtP5ek9NEQGA==}
