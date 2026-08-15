@@ -61,16 +61,8 @@ const posts = blog.sort(
                 <Para variant="muted">
                     When I'm not working, I like making things, reading, and
                     writing (check out my blog
-                    <span class="arrow"><Arrow /></span>)</Para
+                    <span class="arrow"><Arrow /></span>).</Para
                 >
-            </section>
-            <section>
-                <h5>Contact and Socials</h5>
-                {
-                    contacts.map(({ title, link }) => (
-                        <Contact title={title} link={link} />
-                    ))
-                }
             </section>
         </section>
         <section class="writing" id="writing">
@@ -79,16 +71,27 @@ const posts = blog.sort(
                 {posts.map((post) => <Post {...post.data} id={post.id} />)}
             </div>
         </section>
+        <section class="contact">
+            <h5>Contact and Socials</h5>
+            {
+                contacts.map(({ title, link }) => (
+                    <Contact title={title} link={link} />
+                ))
+            }
+        </section>
     </div>
 </BaseLayout>
 
 <style>
+    :global(body > footer) {
+        margin-block-start: auto;
+    }
     .layout {
-        flex: 1;
-        min-height: 0;
         display: grid;
         grid-template-columns: minmax(0px, 1.14fr) minmax(0px, 1fr);
-        gap: clamp(2rem, 9vw, 11rem);
+        grid-template-rows: auto auto 1fr;
+        column-gap: clamp(2rem, 9vw, 11rem);
+        row-gap: 1.5rem;
         width: 100%;
         max-width: var(--measure);
         margin-inline: auto;
@@ -96,10 +99,37 @@ const posts = blog.sort(
         padding-inline: var(--gutter);
     }
     .intro {
+        grid-column: 1;
+        grid-row: 1;
         display: flex;
         flex-direction: column;
         align-self: start;
         gap: 1.5rem;
+    }
+    .contact {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .writing {
+        grid-column: 2;
+        grid-row: 1 / -1;
+    }
+
+    @media (max-width: 64rem) {
+        .layout {
+            grid-template-columns: minmax(0px, 1fr);
+            grid-template-rows: none;
+            align-content: start;
+            row-gap: clamp(2.75rem, 7vw, 4rem);
+            max-width: calc(var(--measure-prose) + 2 * var(--gutter));
+            padding-block-end: clamp(1.25rem, 3vh, 2.5rem);
+        }
+        .intro,
+        .contact,
+        .writing {
+            grid-column: 1;
+            grid-row: auto;
+        }
     }
     a {
         color: var(--accent);

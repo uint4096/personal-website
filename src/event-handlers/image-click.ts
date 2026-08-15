@@ -1,4 +1,5 @@
 const FIT = 0.7;
+const MIN_ZOOM = 1.1;
 
 const close = () => {
   document
@@ -9,13 +10,14 @@ const close = () => {
 const open = (image: HTMLImageElement) => {
   const rect = image.getBoundingClientRect();
 
-  const scale = Math.max(
-    1.2,
-    Math.min(
-      (window.innerWidth * FIT) / rect.width,
-      (window.innerHeight * FIT) / rect.height,
-    ),
+  const scale = Math.min(
+    (window.innerWidth * FIT) / rect.width,
+    (window.innerHeight * FIT) / rect.height,
   );
+
+  if (scale < MIN_ZOOM) {
+    return;
+  }
 
   image.style.setProperty(
     "--dx",
