@@ -23,6 +23,8 @@
     --code-inline-bg: oklch(0.3 0.01 65 / 0.5);
     --callout-bg: oklch(0.75 0.12 60 / 0.08);
     --callout-rule: oklch(0.75 0.12 60 / 0.22);
+    --callout-info: oklch(0.72 0.1 245);
+    --callout-warn: oklch(0.84 0.13 95);
 
     --font-serif: "Newsreader", Georgia, serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
