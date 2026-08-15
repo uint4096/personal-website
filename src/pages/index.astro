@@ -9,6 +9,7 @@ import Para from "@components/Para.astro";
 import Contact from "@components/Contact.astro";
 
 import Arrow from "../assets/arrow.svg";
+import ArrowDown from "../assets/arrow-down.svg";
 import Post from "@components/Post.astro";
 
 const NAME = "Abhishek Kumar";
@@ -16,19 +17,19 @@ const NAME = "Abhishek Kumar";
 const contacts: Array<ComponentProps<typeof Contact>> = [
     {
         title: "GitHub",
-        link: "https://github.com/uint4096",
+        link: import.meta.env["PUBLIC_GITHUB_URL"],
     },
     {
         title: "LinkedIn",
-        link: "https://linkedin.com/in/abhishek-kr7",
+        link: import.meta.env["PUBLIC_LINKEDIN_URL"],
     },
     {
         title: "Email",
-        link: "https://mail.google.com/mail/?view=cm&fs=1&to=abhishek.725x@gmail.com",
+        link: import.meta.env["PUBLIC_EMAIL"],
     },
     {
         title: "Résumé",
-        link: "https://drive.google.com/file/d/1bGwYtS5pRad5FU64S1TLQXo_RI-5OVln/view?usp=sharing",
+        link: import.meta.env["PUBLIC_RESUME_LINK"],
     },
 ];
 
@@ -61,7 +62,8 @@ const posts = blog.sort(
                 <Para variant="muted">
                     When I'm not working, I like making things, reading, and
                     writing (check out my blog
-                    <span class="arrow"><Arrow /></span>).</Para
+                    <span class="arrow arrow-across"><Arrow /></span><span
+                        class="arrow arrow-down"><ArrowDown /></span>).</Para
                 >
             </section>
         </section>
@@ -149,5 +151,19 @@ const posts = blog.sort(
         letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--text-faint);
+    }
+
+    .arrow-down {
+        display: none;
+        transform: translateY(4px);
+    }
+
+    @media (max-width: 64rem) {
+        .arrow-across {
+            display: none;
+        }
+        .arrow-down {
+            display: inline-flex;
+        }
     }
 </style>
