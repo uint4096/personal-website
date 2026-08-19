@@ -196,4 +196,4 @@ Second timeout run
 ```
 ### Conclusion
 
-Programming in single-threaded languages can have quirks that are difficult to navigate. Blocking, especially, is a tricky concept to get right. You have to be aware not only that your code might be starving the event loop, but also that seemingly simple statements like `await Promise.resolve()` don't do what you might expect. But once you know where your code actually yields control, most of that difficulty goes away.
+Programming in single-threaded languages can have quirks that are difficult to navigate. Blocking, especially, is a tricky concept to get right. You have to be aware not only that your code might be starving the event loop, but also that seemingly simple statements like `await Promise.resolve()` don't do what you might expect. Exercises like this can help us gain a deeper understanding of Node internals, and how to yield control back to the event loop and avoid blocking.
