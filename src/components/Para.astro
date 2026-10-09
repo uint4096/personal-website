@@ -6,12 +6,14 @@ interface Props {
 const { variant = "default" } = Astro.props;
 ---
 
-<p class={variant}><slot /></p>
+<p class={variant}>
+    <slot />
+</p>
 
 <style>
     p {
         font-size: var(--step-0);
-        line-height: 1.62;
+        line-height: 1.4;
         letter-spacing: -0.004em;
     }
     .default {
