@@ -13,16 +13,16 @@
     --text-muted: oklch(0.74 0.012 80);
     --text-faint: oklch(0.58 0.01 70);
     --text-dim: oklch(0.5 0.01 70);
-    --accent: oklch(0.82 0.11 60);
-    --accent-rule: oklch(0.82 0.11 60 / 0.35);
-    --accent-deep: oklch(0.75 0.12 60);
+    --accent: oklch(0.72 0.19 25);
+    --accent-rule: oklch(0.72 0.19 25 / 0.35);
+    --accent-deep: oklch(0.66 0.2 25);
     --rule: oklch(0.25 0.0008 50);
 
     --code-bg: oklch(0.19 0.008 66);
     --code-rule: oklch(0.3 0.008 68 / 0.6);
     --code-inline-bg: oklch(0.3 0.01 65 / 0.5);
-    --callout-bg: oklch(0.75 0.12 60 / 0.08);
-    --callout-rule: oklch(0.75 0.12 60 / 0.22);
+    --callout-bg: oklch(0.66 0.2 25 / 0.08);
+    --callout-rule: oklch(0.66 0.2 25 / 0.22);
     --callout-info: oklch(0.72 0.1 245);
     --callout-warn: oklch(0.84 0.13 95);
 
@@ -61,5 +61,5 @@ body {
 }
 
 ::selection {
-    background: oklch(0.75 0.12 60 / 0.3);
+    background: oklch(0.66 0.2 25 / 0.3);
 }
